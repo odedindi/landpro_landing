@@ -6,9 +6,9 @@
 	},
 	"languages": {
 		"selectLang": "Please select a different language",
-		"en": "English",
-		"de": "Deutsch",
-		"fr": "française"
+		"en": " English",
+		"de": " Deutsch",
+		"fr": " française"
 	},
 
 	"links": {

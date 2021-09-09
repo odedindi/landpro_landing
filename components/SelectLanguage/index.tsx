@@ -1,7 +1,7 @@
-/* eslint-disable @next/next/no-img-element */
 // ======================= React & Next =======================
 import * as React from 'react';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 // ========================== styles ==========================
 import * as S from './style';
 // ======================= translations =======================
@@ -33,14 +33,17 @@ const SelectLanguage = () => {
 			options={otherLocales.map((locale) => (
 				<S.SelectLanguageButton
 					key={locale}
+					// focusInset={true}
 					onClick={() => onChangeLanguage(locale)}>
-					{t(`languages.${locale}`)}
-					<Button.EndIcon>
-						<img
-							src={`assets/languageIcons/${locale}.png`}
+					<Button.StartIcon>
+						<Image
+							src={`/assets/languageIcons/${locale}.png`}
 							alt={`${locale} flag`}
+							height="30%"
+							width="30%"
 						/>
-					</Button.EndIcon>
+					</Button.StartIcon>
+					{t(`languages.${locale}`)}
 				</S.SelectLanguageButton>
 			))}
 			isVisible={isVisible}
