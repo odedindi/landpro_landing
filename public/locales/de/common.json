@@ -1,0 +1,65 @@
+{
+	"header": {
+		"title": "LandPro",
+		"description": "Gemeinsam den Klimawandel eindämmen",
+		"keywords": "Kohlenstoff, Kohlendioxid, Klimawandel, organischer Kohlenstoff im Boden, Soc, Vegetationsbedeckung"
+	},
+	"languages": {
+		"selectLang": "Bitte wählen Sie eine andere Sprache"
+	},
+	"links": {
+		"product": "Product",
+		"mission": "Mission",
+		"news": "Nachrichten",
+		"contact": "Kontakt"
+	},
+	"intro": {
+		"title": "LandPro macht CO2-Sequestrierung ZUGÄNGLICH und TRANSPARENT",
+		"text": "Wir stellen uns eine Welt vor, in der klimabewusste Landwirte, Forstwirte und Verwalter die Kohlenstoffbindung schätzen und verdienen. Sie verwenden LandPro, um kohlenstoffnegative Interventionen zu planen, ihre Auswirkungen zu überwachen und diese Gewinne auf dem Kohlenstoffmarkt verfügbar zu machen. Unternehmen und Regierungen, die CO2-Emissionen kompensieren möchten, kaufen diese Emissionen über LandPro und beziehen CO2-Zertifizierungsstellen ein, um den Ausgleich zu formalisieren."
+	},
+
+	"introSub": {
+		"title": "Die Leistungsfähigkeit von KI und Satelliten auf Knopfdruck",
+		"text": "LandPro SCHÄTZT mithilfe von KI und Satelliten, wie viel Kohlenstoff im Boden und in der Vegetation von Ackerland vorhanden ist. Dies hilft Landwirten, ZU DEMONSTRIEREN, wie viel Kohlenstoff sie mit ihren intelligenten landwirtschaftlichen Praktiken speichern. LandPro VERBINDET Kohlenstoffmarktakteure mit diesen intelligenten Landwirten, ERLEICHTERT die CO2-Kompensationsprozess und ERHÖHUNG DER TRANSPARENZ über den gesamten CO2-Kreislauf"
+	},
+	"about": {
+		"title": "Wer kann LandPro nutzen?",
+		"text": "Neueste Satellitenbilder können verwendet werden, um CO2 in Boden und Vegetation abzuschätzen, mit interaktiven Karten und Web-Apps können Sie den Benutzer leicht erreichen, der ein Interessengebiet definieren kann.",
+		"section1Title": "Landwirte, Landmanager & Umweltschützer",
+		"section1Content": "kann LandPro verwenden, um ein adaptives und nachhaltiges Landwirtschaftsmanagement zu planen, die Bemühungen zur CO2-Sequestrierung zu überwachen und zu demonstrieren.",
+		"section2Title": "Unternehmen im Markt für Emissionszertifikate und ESG-Finanzen",
+		"section2Content": "kann ihren Zertifizierungsprozess für CO2-Zertifikate rationalisieren und verbessern, neue potenzielle Partner vor Ort entdecken und Portfolios von Maßnahmen zur CO2-Einsparung erstellen.",
+		"section3Title": "Kommunen und Naturschutzeinrichtungen",
+		"section3Content": "das Kohlenstoffbindungspotenzial ihres Gebiets und die Auswirkungen ihrer Interventionen verstehen."
+	},
+	"mission": {
+		"title": "Künstliche Intelligenz und Satellitenbilder nutzen",
+		"text": "Robuste, bekannte und klare Methoden zur schnellen Schätzung und Messung von Bodendaten."
+	},
+	"how": {
+		"title": "Wie funktioniert es ?",
+		"stages": {
+			"oneTitle": "Bereich auswählen",
+			"oneText": "Wählen Sie das Interessengebiet per Telefon oder Computer aus, indem Sie RGB-Satellitenbilder als Referenz verwenden oder räumliche Vektordateien verwenden",
+			"twoTitle": "Segmentierung",
+			"twoText": "Der Algorithmus unterscheidet mittels semantischer Segmentierung zwischen verschiedenen Landbedeckungs-/Vegetationstypen",
+			"threeTitle": "Klassifizierung",
+			"threeText": "Infrarot- und Radardaten werden verwendet, um die Landproduktivität über Zeit und Raum zu klassifizieren"
+		}
+	},
+	"product": {
+		"title": "Das war's!",
+		"text": "LandPro-Tools können für Landwirte und Landverwalter von großem Nutzen sein, da der Bedarf an genauen, aktuellen Daten Familien helfen kann, mit geringeren Umweltauswirkungen mehr zu produzieren."
+	},
+	"contact": {
+		"title": "Interessieren Sie sich für LandPro?",
+		"form": {
+			"Name": "Vollständiger Name",
+			"NamePlaceholder": "Bitte tragen Sie Ihren vollen Namen ein",
+			"Email": "E-mail",
+			"EmailPlaceholder": "Geben Sie bitte Ihre Email-Adresse ein",
+			"Message": "Botschaft",
+			"submitBtn": "Einreichen"
+		}
+	}
+}
