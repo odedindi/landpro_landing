@@ -21,27 +21,27 @@ const NavBar = () => {
 
 	return (
 		<S.NavBarWrapper id="navBar">
-			<Logo />
+			<Logo type="NavBar" />
 
 			<S.ButtonsWrapper>
 				<S.ShowOnBigScreen>
 					<MenuItems />
 				</S.ShowOnBigScreen>
-
-				<S.ShowOnSmallScreen>
-					<S.NavBarButton onClick={showDrawerHandler}>
-						<Button.StartIcon>{menuIcons.menu}</Button.StartIcon>
-					</S.NavBarButton>
-				</S.ShowOnSmallScreen>
-
-				{showDrawerState && (
-					<MenuDrawer
-						showDrawerHandler={showDrawerHandler}
-						title={t('drawerTitle')}
-						body={<MenuItems />}
-					/>
-				)}
 			</S.ButtonsWrapper>
+
+			<S.ShowOnSmallScreen>
+				<S.NavBarButton onClick={showDrawerHandler}>
+					<Button.StartIcon>{menuIcons.menu}</Button.StartIcon>
+				</S.NavBarButton>
+			</S.ShowOnSmallScreen>
+
+			{showDrawerState && (
+				<MenuDrawer
+					showDrawerHandler={showDrawerHandler}
+					title={t('drawerTitle')}
+					body={<MenuItems />}
+				/>
+			)}
 		</S.NavBarWrapper>
 	);
 };

@@ -17,8 +17,12 @@
 		"news": "News",
 		"contact": "Contact"
 	},
+	"hero": {
+		"photo": "Photo by",
+		"on": "on"
+	},
 	"intro": {
-		"title": "LandPro makes carbon sequestration ACCESSIBLE and TRANSPARENT",
+		"title": "ACCESSIBLE & TRANSPARENT",
 		"text": "We imagine a world where climate-smart farmers, foresters, and administrators value and earn from carbon sequestration. They use LandPro to plan carbon-negative interventions, monitor their impacts, and make these gains available in the carbon market. Companies and Governments looking to offset carbon emissions buy these emissions through LandPro, and involve carbon certification agencies to formalize the offset."
 	},
 
@@ -43,12 +47,12 @@
 	"how": {
 		"title": "How does it work ?",
 		"stages": {
-			"1Title": "Select Area",
-			"1Text": "Select area of interest via phone or computer using satellite RGB images as reference or using spatial vector files",
-			"2Title": "Segmentation",
-			"2Text": "The algorithm discriminates between different land cover / vegetation types using semantic segmentation",
-			"3Title": "Classification",
-			"3Text": "Infrared & radar data are used to classify the land productivity over time and space"
+			"firstTitle": "Select Area",
+			"firstText": "Select area of interest via phone or computer using satellite RGB images as reference or using spatial vector files",
+			"secondTitle": "Segmentation",
+			"secondText": "The algorithm discriminates between different land cover / vegetation types using semantic segmentation",
+			"thirdTitle": "Classification",
+			"thirdText": "Infrared & radar data is used to classify the land productivity over time and space"
 		}
 	},
 	"product": {

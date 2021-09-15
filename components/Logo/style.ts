@@ -3,9 +3,9 @@ import { device } from 'utils/mediaQueries';
 
 export const Container = styled.a`
 	display: flex;
-	padding: 1.0125rem 0 0 0;
-	min-width: 250px;
-	width: 20rem;
+	padding: 1.5rem 0 2.5rem 0;
+	min-width: 150px;
+	/* width: 10rem; */
 
 	#brand {
 		display: flex;
@@ -14,10 +14,10 @@ export const Container = styled.a`
 		justify-content: center;
 
 		span {
-			color: #fec97a;
+			color: ${({ theme }) => theme.landproSlogen.span};
 		}
 		#land {
-			color: #63b263;
+			color: ${({ theme }) => theme.landproSlogen.land};
 			font-size: 1.9rem;
 			position: relative;
 			top: 1.7rem;
@@ -30,7 +30,7 @@ export const Container = styled.a`
 			}
 		}
 		#pro {
-			color: #56934d;
+			color: ${({ theme }) => theme.landproSlogen.pro};
 			position: relative;
 			bottom: 0.5rem;
 			right: 0.415rem;

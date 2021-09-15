@@ -16,3 +16,9 @@ type ContainerProps = {
 	padding?: boolean;
 	border?: boolean;
 };
+
+// logo
+type NavBarOrFooterLogo = {
+	height: string;
+	width: string;
+};

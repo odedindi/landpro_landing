@@ -9,7 +9,7 @@ import { useTranslation } from 'next-i18next';
 // ======================== components ========================
 import { ContactPerson, GithubLink } from './IconLinks';
 import Container from '../Container';
-
+import { Logo } from 'components/Logo';
 const Footer = () => {
 	const { t } = useTranslation('footer');
 
@@ -35,36 +35,32 @@ const Footer = () => {
 		<>
 			<S.Footer>
 				<Container>
-					<Row typeof="flex" justify="space-between">
-						<Col lg={12} md={14} sm={16} xs={24}>
-							<S.Title>{t('footer.contact')}</S.Title>
-							<br />
-							<S.Paragraph>{t(`footer.description`)}</S.Paragraph>
-							<br />
-						</Col>
-						<Col lg={12} md={14} sm={16} xs={24}>
-							{contacts.map((contact) => (
-								<ContactPerson
-									key={contact.name}
-									name={contact.name}
-									email={contact.email}
-									linkedin={contact.linkedin}
-								/>
-							))}
-						</Col>
-					</Row>
 					<Row typeof="flex" justify="space-around">
-						<Col lg={6} md={6} sm={6} xs={24}>
+						<Col lg={24} md={24} sm={24} xs={24}>
 							<S.Title>{t('footer.company')}</S.Title>
 							<S.FooterLink href="/about">{t('footer.about')}</S.FooterLink>
 							<S.FooterLink href="/#">{t('footer.career')}</S.FooterLink>
 						</Col>
-						{/* <Col lg={6} md={6} sm={6} xs={24}>
-                                <S.Title>{t('footer.language')}</S.Title>
-                                <S.SelectLanguageWrapper>
-                                    <SelectLanguage iconSize="small" />
-                                </S.SelectLanguageWrapper>
-                            </Col> */}
+					</Row>
+					<Row justify="center">
+						<Col lg={10} md={10} sm={24} xs={24}>
+							<br />
+							<S.Title>{t('footer.contact')}</S.Title>
+							<S.Paragraph>{t(`footer.description`)}</S.Paragraph>
+						</Col>
+						<Col lg={10} md={10} sm={24} xs={14}>
+							<Row>
+								{contacts.map((contact) => (
+									<Col lg={24} md={24} sm={24} xs={24} key={contact.name}>
+										<ContactPerson
+											name={contact.name}
+											email={contact.email}
+											linkedin={contact.linkedin}
+										/>
+									</Col>
+								))}
+							</Row>
+						</Col>
 					</Row>
 				</Container>
 			</S.Footer>
@@ -73,13 +69,7 @@ const Footer = () => {
 					<S.FooterContainer>
 						<GithubLink href="https://github.com/odedindi/landpro" />
 						<S.LogoContainer>
-							<Image
-								src="/assets/logos/logo.png"
-								alt="landpro logo"
-								height="50%"
-								width="50%"
-							/>
-							<p>&copy;{new Date().getFullYear()}</p>
+							<Logo type="Footer" />
 						</S.LogoContainer>
 					</S.FooterContainer>
 				</Container>

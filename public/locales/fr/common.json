@@ -13,8 +13,12 @@
 		"news": "Nouvelles",
 		"contact": "Contacter"
 	},
+	"hero": {
+		"photo": "Photo de",
+		"on": "sur"
+	},
 	"intro": {
-		"title": "LandPro rend la séquestration du carbone ACCESSIBLE et TRANSPARENTE",
+		"title": "ACCESSIBLE & TRANSPARENTE",
 		"text": "Nous imaginons un monde où les agriculteurs, les forestiers et les administrateurs intelligents face au climat valorisent et gagnent de la séquestration du carbone. Ils utilisent LandPro pour planifier des interventions à impact carbone négatif, surveiller leurs impacts et rendre ces gains disponibles sur le marché du carbone. Les entreprises et les gouvernements qui cherchent à compenser les émissions de carbone achètent ces émissions via LandPro et impliquent des agences de certification carbone pour formaliser la compensation."
 	},
 
@@ -39,12 +43,12 @@
 	"how": {
 		"title": "Comment ça marche ?",
 		"stages": {
-			"oneTitle": "Sélectionner la zone",
-			"oneText": "Sélectionnez la zone d'intérêt par téléphone ou par ordinateur en utilisant des images RVB satellite comme référence ou en utilisant des fichiers vectoriels spatiaux",
-			"twoTitle": "Segmentation",
-			"twoText": "L'algorithme fait la distinction entre différents types d'occupation du sol/de végétation en utilisant la segmentation sémantique",
-			"threeTitle": "Classement",
-			"threeText": "Les données infrarouges et radar sont utilisées pour classer la productivité des terres dans le temps et dans l'espace"
+			"firstTitle": "Sélectionner la zone",
+			"firstText": "Sélectionnez la zone d'intérêt par téléphone ou par ordinateur en utilisant des images RVB satellite comme référence ou en utilisant des fichiers vectoriels spatiaux",
+			"secondTitle": "Segmentation",
+			"secondText": "L'algorithme fait la distinction entre différents types d'occupation du sol/de végétation en utilisant la segmentation sémantique",
+			"thirdTitle": "Classement",
+			"thirdText": "Les données infrarouges et radar sont utilisées pour classer la productivité des terres dans le temps et dans l'espace"
 		}
 	},
 	"product": {

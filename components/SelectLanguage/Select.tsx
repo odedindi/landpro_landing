@@ -7,7 +7,6 @@ import * as S from './style';
 import InputLabel from '@material-ui/core/InputLabel';
 import LanguageIcon from '@material-ui/icons/Language';
 import { Header, Body, Close } from '@zendeskgarden/react-modals';
-import { Button } from '@zendeskgarden/react-buttons';
 // ============================================================
 
 type SelectProps = {
@@ -27,9 +26,7 @@ const Select = ({
 }: SelectProps) => (
 	<>
 		<S.OpenLanguageModalButton onClick={isVisibleHandler}>
-			<Button.StartIcon>
-				<LanguageIcon fontSize="large" />
-			</Button.StartIcon>
+			<LanguageIcon fontSize="medium" />
 		</S.OpenLanguageModalButton>
 		{isVisible && (
 			<S.SelectLanguageModal onClose={isVisibleHandler}>

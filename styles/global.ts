@@ -1,12 +1,13 @@
 import styled, { createGlobalStyle } from 'styled-components';
 import { device } from 'utils/mediaQueries';
+import { Button } from '@zendeskgarden/react-buttons';
 
-export const LandProButton = styled.button`
+export const LandProButton = styled(Button)`
 	cursor: pointer;
 	font-size: 1.125em;
 	border: solid 0.125em transparent;
 	border-radius: 20px 20px 20px 20px;
-	background-color: ${({ theme }) => theme.logo};
+	background-color: ${({ theme }) => theme.brand};
 	color: white;
 	transition: ease-in-out 0.53s;
 	font-weight: 700;
@@ -14,7 +15,7 @@ export const LandProButton = styled.button`
 	:hover,
 	:focus {
 		color: ${({ theme }) => theme.colors.header};
-		background-color: transparent;
+		/* background-color: transparent; */
 		border: solid 0.125em transparent;
 	}
 `;
