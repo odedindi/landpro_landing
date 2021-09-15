@@ -13,8 +13,12 @@
 		"news": "Nachrichten",
 		"contact": "Kontakt"
 	},
+	"hero": {
+		"photo": "Foto von",
+		"on": "auf"
+	},
 	"intro": {
-		"title": "LandPro macht CO2-Sequestrierung ZUGÄNGLICH und TRANSPARENT",
+		"title": "ZUGÄNGLICH & TRANSPARENT",
 		"text": "Wir stellen uns eine Welt vor, in der klimabewusste Landwirte, Forstwirte und Verwalter die Kohlenstoffbindung schätzen und verdienen. Sie verwenden LandPro, um kohlenstoffnegative Interventionen zu planen, ihre Auswirkungen zu überwachen und diese Gewinne auf dem Kohlenstoffmarkt verfügbar zu machen. Unternehmen und Regierungen, die CO2-Emissionen kompensieren möchten, kaufen diese Emissionen über LandPro und beziehen CO2-Zertifizierungsstellen ein, um den Ausgleich zu formalisieren."
 	},
 
@@ -39,12 +43,12 @@
 	"how": {
 		"title": "Wie funktioniert es ?",
 		"stages": {
-			"oneTitle": "Bereich auswählen",
-			"oneText": "Wählen Sie das Interessengebiet per Telefon oder Computer aus, indem Sie RGB-Satellitenbilder als Referenz verwenden oder räumliche Vektordateien verwenden",
-			"twoTitle": "Segmentierung",
-			"twoText": "Der Algorithmus unterscheidet mittels semantischer Segmentierung zwischen verschiedenen Landbedeckungs-/Vegetationstypen",
-			"threeTitle": "Klassifizierung",
-			"threeText": "Infrarot- und Radardaten werden verwendet, um die Landproduktivität über Zeit und Raum zu klassifizieren"
+			"firstTitle": "Bereich auswählen",
+			"firstText": "Wählen Sie das Interessengebiet per Telefon oder Computer aus, indem Sie RGB-Satellitenbilder als Referenz verwenden oder räumliche Vektordateien verwenden",
+			"secondTitle": "Segmentierung",
+			"secondText": "Der Algorithmus unterscheidet mittels semantischer Segmentierung zwischen verschiedenen Landbedeckungs-/Vegetationstypen",
+			"thirdTitle": "Klassifizierung",
+			"thirdText": "Infrarot- und Radardaten werden verwendet, um die Landproduktivität über Zeit und Raum zu klassifizieren"
 		}
 	},
 	"product": {

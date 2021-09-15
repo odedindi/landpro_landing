@@ -6,10 +6,12 @@ import { device } from 'utils/mediaQueries';
 // nav
 export const NavBarWrapper = styled.header`
 	display: flex;
-	flex-direction: row;
+	flex-flow: row;
 	justify-content: space-between;
-	height: 5rem;
+	height: 7rem;
 	background: ${({ theme }) => theme.colors.background};
+	padding: 0 0 0 2rem;
+	/* margin-bottom: 3.5rem; */
 `;
 
 export const ButtonsWrapper = styled.section`
@@ -29,8 +31,6 @@ export const ShowOnSmallScreen = styled.section`
 	width: 3.5rem;
 	${device.phone} {
 		display: block !important;
-		position: fixed;
-		right: 0;
 	}
 `;
 export const DrawerModal = styled(Modal)`
@@ -44,7 +44,7 @@ export const DrawerModal = styled(Modal)`
 	left: 0;
 	width: 100vw;
 	height: 35vh;
-	/* background: darkcyan; */
+
 	.modalHeader {
 		${device.phone} {
 			padding: 2rem 5rem;
@@ -122,8 +122,9 @@ export const Container = styled.div<ContainerProps>`
 // footer
 
 export const Footer = styled.footer`
+	width: 100vw;
 	background: rgb(245, 245, 245);
-	padding: 2.5rem 10rem 0 2.5rem;
+	padding: 2.5rem 2.5rem 0 2.5rem;
 `;
 
 export const Row = styled.div`
@@ -179,16 +180,17 @@ export const FooterLink = styled.a`
 `;
 
 export const Extra = styled.section`
+	width: 100vw;
 	background: rgb(245, 245, 245);
 	position: relative;
-	padding: 3rem 0;
+	padding: 3rem 2rem 1rem 2rem;
 `;
 
 export const LogoContainer = styled.div`
 	display: flex;
 	flex-direction: column;
-	position: relative;
-	padding: 1rem;
+
+	padding-top: 2rem;
 
 	p {
 		text-align: center;

@@ -1,24 +1,15 @@
-import Image from 'next/image';
 import * as S from '../style';
+
+import { SocialIcon } from 'react-social-icons';
 
 import { Col, Row } from 'antd';
 
-type SocialLinkProps = {
-	href: string;
-	src: string;
-	title: string;
-};
-const SocialLink = ({ href, src, title }: SocialLinkProps) => (
-	<S.SocialLink>
-		<S.NavLink
-			href={href}
-			target="_blank"
-			rel="noopener noreferrer"
-			key={title}
-			aria-label={title}>
-			<Image src={src} alt={title} width="20px" height="20px" />
-		</S.NavLink>
-	</S.SocialLink>
+const SocialMediaButton = ({ label, url }: { label: string; url: string }) => (
+	<SocialIcon
+		label={label}
+		url={url}
+		style={{ width: '2rem', height: '2rem' }}
+	/>
 );
 
 type ContactPersonProps = {
@@ -34,15 +25,10 @@ export const ContactPerson = ({
 	<Col lg={8} md={8} sm={12} xs={14}>
 		<S.ContactName>{name}</S.ContactName>
 		<Row typeof="flex" justify="space-around">
-			<SocialLink
-				href={`mailto:${email}`}
-				src="/assets/logos/gmail.svg"
-				title="gmail"
-			/>
-			<SocialLink
-				href={`https://www.linkedin.com/in/${linkedin}/`}
-				src="/assets/logos/linkedin-color.svg"
-				title="linkedin"
+			<SocialMediaButton label="Email" url={`mailto:${email}`} />
+			<SocialMediaButton
+				label="Linkedin"
+				url={`https://www.linkedin.com/in/${linkedin}/`}
 			/>
 		</Row>
 	</Col>
@@ -52,5 +38,5 @@ type GithubLinkProps = {
 	href: string;
 };
 export const GithubLink = ({ href }: GithubLinkProps) => (
-	<SocialLink href={href} src="/assets/logos/github.svg" title="github" />
+	<SocialIcon label="Github" url={href} />
 );

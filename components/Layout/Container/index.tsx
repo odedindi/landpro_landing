@@ -1,4 +1,4 @@
-import * as S from './style';
+import * as S from '../style';
 
 const Container: React.FC<ContainerProps> = ({ padding, border, children }) => (
 	<S.Container padding={padding} border={border}>

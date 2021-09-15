@@ -78,6 +78,7 @@ const Button = styled.button`
 `;
 export const GreenButton = styled(Button)`
 	border: 4px solid ${root.green};
+	text-transform: uppercase;
 	color: ${root.green};
 	&:hover {
 		color: ${root.blue};

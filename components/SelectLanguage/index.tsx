@@ -33,7 +33,6 @@ const SelectLanguage = () => {
 			options={otherLocales.map((locale) => (
 				<S.SelectLanguageButton
 					key={locale}
-					// focusInset={true}
 					onClick={() => onChangeLanguage(locale)}>
 					<Button.StartIcon>
 						<Image
