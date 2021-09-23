@@ -30,7 +30,8 @@ export const useForm = (validate: Validate) => {
 		});
 
 		if (!userShouldCheckHisErrors) {
-			const url = `/api/contact`;
+			const formspreeUrl = '/api/contact';
+			const sendGridUrl = '/api/sendgrid';
 			const body = (Object.keys(values) as Array<keyof typeof values>).reduce(
 				(body, key) => {
 					body[key] = values[key];
@@ -46,7 +47,7 @@ export const useForm = (validate: Validate) => {
 				},
 			);
 
-			const response = await fetch('/api/sendgrid', {
+			const response = await fetch(formspreeUrl, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
