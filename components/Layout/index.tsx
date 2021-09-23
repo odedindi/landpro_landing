@@ -1,6 +1,8 @@
 // ======================= React & Next =======================
 import * as React from 'react';
 import { useRouter } from 'next/router';
+// ========================== hooks ===========================
+import { useElementIsVisible } from 'hooks/useElementIsVisible';
 // ========================== styles ==========================
 import * as S from './style';
 // ======================== components ========================
@@ -14,22 +16,26 @@ import { routes } from 'utils/constants';
 // ========================================================
 
 export const PageLayout: React.FC = ({ children }) => {
+	const { pathname } = useRouter();
+
+	const { isVisible, elementToCheckIfVisible } =
+		useElementIsVisible<HTMLDivElement>(-10);
+
 	const [didMounted, setDidMounted] = React.useState(false);
 	React.useEffect(() => setDidMounted(true), []);
-
-	const { pathname } = useRouter();
-	console.log(pathname);
 	if (!didMounted) return null;
 
 	return (
 		<>
 			<S.LayoutWrapper>
 				<Header />
-				<NavBar />
+				<div ref={elementToCheckIfVisible}>
+					<NavBar />
+				</div>
 				{pathname === routes.home && <LandProHero />}
 				<Container>
 					{children}
-					<ScrollUp />
+					<ScrollUp disable={isVisible ? true : false} />
 				</Container>
 				<Footer />
 			</S.LayoutWrapper>

@@ -1,0 +1,11 @@
+{
+	"contactBtn": "Kontakt",
+	"Name": "Vollständiger Name",
+	"NamePlaceholder": "Bitte tragen Sie Ihren vollen Namen ein",
+	"Email": "E-mail",
+	"EmailPlaceholder": "Geben Sie bitte Ihre Email-Adresse ein",
+	"Subject": "Thema",
+	"Message": "Botschaft",
+	"submitBtn": "Einreichen",
+	"cancelBtn": "Abbrechen"
+}

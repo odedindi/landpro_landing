@@ -4,18 +4,13 @@
 		"description": "Atténuer le changement climatique ensemble",
 		"keywords": "carbone, dioxyde de carbone, changement climatique, carbone organique du sol, soc, couverture végétale"
 	},
-	"languages": {
-		"selectLang": "Veuillez sélectionner une autre langue"
-	},
 	"links": {
-		"product": "Product",
-		"mission": "Mission",
-		"news": "Nouvelles",
-		"contact": "Contacter"
+		"users": "Utilisateurs",
+		"ai": "I.A. Modèle",
+		"news": "Nouvelles"
 	},
-	"hero": {
-		"photo": "Photo de",
-		"on": "sur"
+	"copyRights": {
+		"Photo by": "*Photo de "
 	},
 	"intro": {
 		"title": "ACCESSIBLE & TRANSPARENTE",
@@ -23,21 +18,21 @@
 	},
 
 	"introSub": {
-		"title": "La puissance de l'IA et du satellite à portée de main",
-		"text": "LandPro ESTIME la quantité de carbone présente dans le sol et la végétation des terres cultivées à l'aide de l'IA et de satellites. Cela aide les agriculteurs à DÉMONTRER la quantité de carbone qu'ils séquestrent avec leurs pratiques agricoles intelligentes. LandPro CONNECTE les acteurs du marché du carbone à ces agriculteurs intelligents, FACILITE la processus de compensation carbone et AUGMENTER LA TRANSPARENCE tout au long du cycle du carbone"
+		"title": "La puissance de l'I.A. et du satellite à portée de main",
+		"text": "LandPro ESTIME la quantité de carbone présente dans le sol et la végétation des terres cultivées à l'aide de l'I.A. et de satellites. Cela aide les agriculteurs à DÉMONTRER la quantité de carbone qu'ils séquestrent avec leurs pratiques agricoles intelligentes. LandPro CONNECTE les acteurs du marché du carbone à ces agriculteurs intelligents, FACILITE la processus de compensation carbone et AUGMENTER LA TRANSPARENCE tout au long du cycle du carbone"
 	},
-	"about": {
+	"users": {
 		"title": "Qui peut utiliser LandPro ?",
 		"text": "Les images satellites les plus récentes peuvent être utilisées pour estimer le CO2 dans le sol et la végétation, à l'aide de cartes interactives et d'applications Web permettant d'atteindre facilement l'utilisateur, qui peut définir une zone d'intérêt.",
 		"section1Title": "Agriculteurs, gestionnaires de terres et défenseurs de l'environnement",
 		"section1Content": "peut utiliser LandPro pour planifier une gestion agricole adaptative et durable, surveiller et démontrer les efforts de séquestration du CO2.",
-		"section2Title": "Les entreprises de la place du crédit carbone et de la finance ESG",
+		"section2Title": "Acteurs du marché carbone & finance ESG",
 		"section2Content": "peut rationaliser et améliorer leur processus de certification des crédits carbone, découvrir de nouveaux partenaires potentiels sur le terrain et créer des portefeuilles d'interventions d'économie de carbone.",
 		"section3Title": "Administrations locales et institutions de conservation de la nature",
-		"section3Content": "comprendre le potentiel de séquestration du carbone de leur territoire et l'impact de leurs interventions."
+		"section3Content": "peuvent comprendre le potentiel de séquestration du carbone de leur territoire et l'impact de leurs interventions."
 	},
-	"mission": {
-		"title": "Exploiter l'IA et l'imagerie satellite ",
+	"ai": {
+		"title": "Exploiter l'I.A. et l'imagerie satellite ",
 		"text": "Méthodologies robustes, connues et claires pour estimer et mesurer rapidement les données au sol."
 	},
 	"how": {
@@ -51,19 +46,9 @@
 			"thirdText": "Les données infrarouges et radar sont utilisées pour classer la productivité des terres dans le temps et dans l'espace"
 		}
 	},
-	"product": {
+	"that is it": {
 		"title": "C'est à peu près tout!",
-		"text": "Les outils LandPro peuvent être particulièrement utiles aux agriculteurs et aux administrateurs fonciers, où le besoin de données précises et à jour peut aider les familles à produire plus avec un impact environnemental moindre."
-	},
-	"contact": {
-		"title": "Etes-vous intéressé par LandPro?",
-		"form": {
-			"Name": "Nom et prénom",
-			"NamePlaceholder": "S'il vous plait entrez votre nom entier",
-			"Email": "E-mail",
-			"EmailPlaceholder": "Veuillez saisir votre adresse e-mail",
-			"Message": "Un message",
-			"submitBtn": "Soumettre"
-		}
+		"text": "Les outils LandPro peuvent être particulièrement utiles aux agriculteurs et aux administrateurs fonciers, où le besoin de données précises et à jour peut aider les familles à produire plus avec un impact environnemental moindre.",
+		"interested": "Etes-vous intéressé par LandPro?"
 	}
 }

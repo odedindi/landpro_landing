@@ -1,23 +1,27 @@
-import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import { device } from 'utils/mediaQueries';
 
-export const ScrollWrapper = styled.div`
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-	color: rgba(0, 0, 0, 0.65);
-	font-size: 14px;
-	line-height: 1.5715;
-	list-style: none;
+const fadein = keyframes`
+	    from { opacity: 0; }
+    to { opacity: 0.7; }
+`;
+const fadeout = keyframes`
+	    from { opacity: 0.7; }
+    to { opacity: 0; }
+`;
+
+export const ScrollWrapper = styled.div<{ disable: boolean }>`
 	position: fixed;
-	right: 100px;
-	bottom: 50px;
+	right: 3rem;
+	bottom: 1rem;
 	z-index: 10;
-	width: 40px;
-	height: 40px;
+
+	height: 1.25rem;
 	cursor: pointer;
 
+	animation: ${({ disable }) => (disable ? fadeout : fadein)} 1s linear 1;
+	opacity: ${({ disable }) => (disable ? 0 : 0.7)};
 	${device.desktop} {
-		display: none;
+		right: 1rem;
 	}
 `;

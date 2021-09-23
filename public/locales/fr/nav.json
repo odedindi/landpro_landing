@@ -1,4 +1,8 @@
 {
+	"languages": {
+		"selectLang": "Veuillez sélectionner une autre langue"
+	},
+
 	"drawerTitle": "Menu",
 	"home": "Accueil",
 	"demo": "Démo de carte",

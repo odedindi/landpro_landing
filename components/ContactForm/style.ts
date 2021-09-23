@@ -1,16 +1,26 @@
 import styled from 'styled-components';
 import { device } from 'utils/mediaQueries';
+import { NavBarButton } from 'components/Layout/style';
+import { Body, Modal } from '@zendeskgarden/react-modals';
 
-export const ContactWrapper = styled.div`
-	/* padding: 5rem 0; */
-	width: 100%;
-	max-width: 1280px;
+export const ContactButton = styled(NavBarButton)`
+	height: 4rem;
+	width: 10rem;
+	border: solid 0.3rem ${({ theme }) => theme.landproSlogen.span};
+	color: ${({ theme }) => theme.landproSlogen.span};
+	background: ${({ theme }) => theme.brand};
+	text-transform: uppercase;
 `;
 
-export const IconWrapper = styled.div`
-	${device.desktop} {
-		/* padding: 10rem 7rem; */
-	}
+export const ContactModal = styled(Modal)`
+	max-width: 90vw;
+`;
+
+export const ContactWrapper = styled(Body)`
+	width: 100%;
+
+	display: flex;
+	justify-content: center;
 `;
 
 export const FormGroup = styled.form`
@@ -18,7 +28,6 @@ export const FormGroup = styled.form`
 	max-width: 520px;
 	${device.desktop} {
 		max-width: 100%;
-		/* margin-top: 2rem; */
 	}
 `;
 
@@ -32,17 +41,18 @@ export const Span = styled.span`
 `;
 
 export const ButtonWrapper = styled.div`
-	text-align: end;
-	position: relative;
+	text-align: center;
+	/* position: relative; */
+	padding-top: 0.75rem;
 	${device.phone} {
-		padding-top: 0.75rem;
+		padding-top: 1.75rem;
 	}
 `;
 
 export const InputWrapper = styled.section`
 	display: inline-block;
 	width: 100%;
-	padding: 10px 5px;
+	padding: 0.7rem 0.3rem;
 `;
 
 export const Input = styled.input<{ spellcheck: boolean }>`

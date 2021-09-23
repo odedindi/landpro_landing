@@ -3,28 +3,18 @@ import * as React from 'react';
 import type { GetStaticProps, NextPage } from 'next';
 import dynamic from 'next/dynamic';
 // ========================== styles ==========================
-// import * as S from 'styles/page/home';
+import * as S from 'styles/pages';
 import { Row } from 'antd';
 // ======================= translations =======================
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-// ========================= icons ========================
-// import plantInHands from '../assets/imgs/svg/plantInHands.png';
-// import farmland from '../assets/imgs/svg/farmland.png';
-// ========================== news ========================
-// import { landProNews } from '../components/News/newsFeed';
-// ====================== components ======================
-const Button = dynamic(() => import('components/Button'));
-const MiddleBlock = dynamic(() => import('components/Block/Content/Middle'));
-const ContentBlock = dynamic(() => import('components/Block/Content'));
-const LandProCarousel = dynamic(() => import('../components/Carousel'));
-// const SectionCard = dynamic(() =>
-//     import('../components/layout/ContentBlock/sectionCard')
-// );
-
-// const NewsCard = dynamic(() => import('../components/News/NewsCard'));
-
-// =========================================================
+// ======================== components ========================
+const AyoraExample = dynamic(() => import('components/AyoraExample'));
+const ContactFrom = dynamic(() => import('components/ContactForm'));
+const ContentBlock = dynamic(() => import('components/ContentBlock'));
+const LandProInfo = dynamic(() => import('components/LandproInfo'));
+const MiddleBlock = dynamic(() => import('components/ContentBlock/Middle'));
+// ============================================================
 
 const Home: NextPage = () => {
 	const [didMount, setDidMount] = React.useState(false);
@@ -39,38 +29,24 @@ const Home: NextPage = () => {
 
 	const PageNavi = () => (
 		<>
-			{/* <S.Header id="pageNavi">
-                <S.Container>
-                    <Row gutter={15} type="flex" justify="start" align="middle">
-                        <S.PageLink onClick={() => scrollTo('about')}>
-                            <S.Span>{t('homePage.links.product')}</S.Span>
-                        </S.PageLink>
+			<S.PageNaviWrapper id="pageNavi">
+				<Row justify="start" align="middle">
+					<S.PageLink onClick={() => scrollTo('intoSub')}>
+						<S.Span>{t('links.ai')}</S.Span>
+					</S.PageLink>
 
-                        <S.PageLink onClick={() => scrollTo('mission')}>
-                            <S.Span>{t('homePage.links.mission')}</S.Span>
-                        </S.PageLink>
-
-                        <S.PageLink onClick={() => scrollTo('news')}>
-                            <S.Span>{t('homePage.links.news')}</S.Span>
-                        </S.PageLink>
-
-                        <S.PageLink
-                            onClick={() => scrollTo('contact')}
-                            style={{ width: '125px' }}
-                        >
-                            <S.Span>
-                                <Button>{t('homePage.links.contact')}</Button>
-                            </S.Span>
-                        </S.PageLink>
-                    </Row>
-                </S.Container>
-            </S.Header> */}
+					<S.PageLink onClick={() => scrollTo('users')}>
+						<S.Span>{t('links.users')}</S.Span>
+					</S.PageLink>
+				</Row>
+			</S.PageNaviWrapper>
 		</>
 	);
 
 	if (!didMount) return null;
+
 	return (
-		<main>
+		<S.PageWrapper>
 			<PageNavi />
 			<ContentBlock
 				isFirst={true}
@@ -86,51 +62,33 @@ const Home: NextPage = () => {
 				title={t('introSub.title')}
 				content={t('introSub.text')}
 			/>
-			<LandProCarousel />
-			<MiddleBlock></MiddleBlock>
-			{/* 
 
-<ContentBlock
-	type="left"
-	id="about"
-	title={t('about.title')}
-	content={t('about.text')}
-	icon={plantInHands}
-	iconAlt="plant in hands"
->
-	{['section1', 'section2', 'section3'].map((section, index) => (
-		<SectionCard
-			key={section}
-			title={t(`about.${section}Title`)}
-			content={t(`about.${section}Content`)}
-			span={index !== 2 ? 10 : 20}
-		/>
-	))}
-</ContentBlock>
+			<MiddleBlock id="ai" title={t('ai.title')} content={t('ai.text')}>
+				<AyoraExample />
+			</MiddleBlock>
 
-<ContentBlock
-	type="right"
-	title={t('mission.title')}
-	content={t('mission.text')}
-	icon="ayoraExample"
-	id="mission"
-/>
+			<MiddleBlock id="how" title={t('how.title')} content={t('')}>
+				<LandProInfo type="ProcessStages" />
+			</MiddleBlock>
 
-<MiddleBlock title="Latest News" id="news" />
-{newsFeed.articles.map((newsItem, index) => (
-	<NewsCard key={index} {...newsItem} />
-))}
-<MiddleBlock />
-*/}
+			<MiddleBlock
+				id="users"
+				title={t('users.title')}
+				content={t('users.text')}>
+				<LandProInfo type="PotentialUsers" />
+			</MiddleBlock>
+
 			<ContentBlock
 				type="left"
-				id="product"
-				title={t('product.title')}
-				content={t('product.text')}
+				id="that is it"
+				title={t('that is it.title')}
+				content={t('that is it.text')}
 				icon="/assets/imgs/svg/farmland.png"
-				iconAlt="farmland"
-			/>
-		</main>
+				iconAlt="farmland">
+				<h6>{t('that is it.interested')}</h6>
+				<ContactFrom id="contact" />
+			</ContentBlock>
+		</S.PageWrapper>
 	);
 };
 
@@ -138,6 +96,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => ({
 	props: {
 		...(await serverSideTranslations(locale as string, [
 			'nav',
+			'contactForm',
 			'common',
 			'footer',
 		])),

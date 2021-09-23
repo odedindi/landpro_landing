@@ -4,22 +4,12 @@
 		"description": "Mitigating Climate Change together",
 		"keywords": "carbon, carbon dioxide, climate change, soil organic carbon, soc, vegetation coverage"
 	},
-	"languages": {
-		"selectLang": "Please select a different language",
-		"en": " English",
-		"de": " Deutsch",
-		"fr": " française"
-	},
-
 	"links": {
-		"product": "Product",
-		"mission": "Mission",
-		"news": "News",
-		"contact": "Contact"
+		"users": "Users",
+		"ai": "A.I. Model"
 	},
-	"hero": {
-		"photo": "Photo by",
-		"on": "on"
+	"copyRights": {
+		"Photo by": "*Photo by "
 	},
 	"intro": {
 		"title": "ACCESSIBLE & TRANSPARENT",
@@ -27,21 +17,21 @@
 	},
 
 	"introSub": {
-		"title": "The power of AI and satellite at your finger-tips",
-		"text": "LandPro ESTIMATES how much carbon there is in cropland’s soil and vegetation using AI and satellites. This helps farmers DEMONSTRATE how much carbon they are sequestering with their smart farming practices. LandPro CONNECTS Carbon market actors with those smart farmers, FACILITATES the carbon offset process and INCREASE TRANSPARENCY across the carbon cycle"
+		"title": "The power of A.I. and satellite at your finger-tips",
+		"text": "LandPro ESTIMATES how much carbon there is in cropland’s soil and vegetation using A.I. and satellites. This helps farmers DEMONSTRATE how much carbon they are sequestering with their smart farming practices. LandPro CONNECTS Carbon market actors with those smart farmers, FACILITATES the carbon offset process and INCREASE TRANSPARENCY across the carbon cycle"
 	},
-	"about": {
+	"users": {
 		"title": "Who can use LandPro ?",
 		"text": "Most recent satellite images can be used to estimate CO2 in soil & vegetation, using interactive maps and web apps allow to easily reach the user, that can define an area of interest.",
 		"section1Title": "Farmers, Land Managers & environmental conservationists",
 		"section1Content": "can use LandPro to plan adaptive and sustainable agriculture management, monitor and demonstrate CO2 sequestration efforts.",
-		"section2Title": "Companies in the carbon credit marketplace and ESG finance",
+		"section2Title": "Carbon market actors & ESG finance",
 		"section2Content": "can streamline and improve their carbon credit certification process, discover new potential partners on the ground and create portfolios of carbon saving interventions.",
 		"section3Title": "Administrations and nature conservation institutions",
-		"section3Content": "understand the carbon sequestration potential of their area and the impact of their interventions."
+		"section3Content": "can understand the carbon sequestration potential of their area and the impact of their interventions."
 	},
-	"mission": {
-		"title": "Harness AI and satellite imaging",
+	"ai": {
+		"title": "Harness A.I. and satellite imaging",
 		"text": "Robust, well-known and clear methodologies to quickly estimate and measure ground data."
 	},
 	"how": {
@@ -55,19 +45,9 @@
 			"thirdText": "Infrared & radar data is used to classify the land productivity over time and space"
 		}
 	},
-	"product": {
+	"that is it": {
 		"title": "That's about it!",
-		"text": "LandPro tools can be distinctly useful to farmers and land administrators, where the need for accurate, up-to-date data can help families produce more with smaller environmental impact."
-	},
-	"contact": {
-		"title": "Are you interested in LandPro?",
-		"form": {
-			"Name": "Full Name",
-			"NamePlaceholder": "Please enter your full name",
-			"Email": "E-mail",
-			"EmailPlaceholder": "Please enter your E-mail address",
-			"Message": "Message",
-			"submitBtn": "Submit"
-		}
+		"text": "LandPro tools can be distinctly useful to farmers and land administrators, where the need for accurate, up-to-date data can help families produce more with smaller environmental impact.",
+		"interested": "Are you interested in LandPro?"
 	}
 }

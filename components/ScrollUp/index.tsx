@@ -1,7 +1,8 @@
-import Image from 'next/image';
-import * as S from './style';
+import * as React from 'react';
+import { scrollIcon } from './scrollIcon';
 
-const ScrollUp = () => {
+import * as S from './style';
+const ScrollUp = ({ disable }: { disable: boolean }) => {
 	const scrollHandler = () => {
 		const element = document.getElementById('navBar');
 		element!.scrollIntoView({
@@ -11,13 +12,8 @@ const ScrollUp = () => {
 	};
 
 	return (
-		<S.ScrollWrapper onClick={scrollHandler}>
-			<Image
-				src="/assets/imgs/svg/scroll-top.svg"
-				alt="scroll-top"
-				width="2rem"
-				height="2rem"
-			/>
+		<S.ScrollWrapper disable={disable} onClick={scrollHandler}>
+			{scrollIcon}
 		</S.ScrollWrapper>
 	);
 };

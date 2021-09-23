@@ -1,9 +1,9 @@
+// ========================== styles ==========================
 import * as S from '../style';
-
-import { SocialIcon } from 'react-social-icons';
-
+// ======================== components ========================
 import { Col, Row } from 'antd';
-
+import { SocialIcon } from 'react-social-icons';
+// ============================================================
 const SocialMediaButton = ({ label, url }: { label: string; url: string }) => (
 	<SocialIcon
 		label={label}

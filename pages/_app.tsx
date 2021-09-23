@@ -3,8 +3,9 @@ import type { AppProps } from 'next/app';
 import { appWithTranslation } from 'next-i18next';
 import Router from 'next/router';
 // ========================== styles ==========================
-import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
+import 'antd/dist/antd.css'; // styles for antd'
 import 'nprogress/nprogress.css'; //styles of nprogress
+import 'styles/modified-carousel.css'; // styling for alice-carousel used in the Ayora example
 // ======================== components ========================
 import NProgress from 'nprogress'; //nprogress module
 import Providers from 'components/Providers';

@@ -1,0 +1,64 @@
+{
+	"news": [
+		{
+			"title": "CodeStories Denmark | All about sustainable software engineering",
+			"content": {
+				"description": "We all know that climate change is one of the biggest issues we need to tackle. Fortunately, tech industry has a lot to offer to solve some of these challenges. In this episode of CodeStories, we will learn about green software engineering and climate-first approach.  We'll also discuss the recent 'Hack the Climate' event; specifically the LandPRO team who built an app to help farmer estimate carbon emissions and mitigate climate change.",
+				"url": "https://channel9.msdn.com/Shows/CodeStories/CodeStories-Denmark-All-about-sustainable-software-engineering",
+				"media": "https://channel9.msdn.com/Shows/CodeStories/CodeStories-Denmark-All-about-sustainable-software-engineering/player#ccLang=en&time=5m4s:paused",
+				"mediaType": "video",
+				"publishedAt": "2021-08-16"
+			},
+			"source": {
+				"name": "Channel 9 msdn",
+				"url": "https://channel9.msdn.com/",
+				"author": "Microsoft"
+			}
+		},
+		{
+			"title": "How an app evaluates climate data of different land areas",
+			"content": {
+				"description": "At the Climate Hackathon, researchers and developers worked on solutions for reducing and assessing carbon footprints by remotely classifying the landscape for the Cool Farm Alliance Challenge [1]. BFH data expert Namrata Gurung reports on the hackathon and her work.",
+				"url": "https://www.societybyte.swiss/en/2021/05/25/how-an-app-evaluates-the-climate-data-of-different-land-areas-a-solution-from-hack-the-climate/",
+				"media": "https://www.societybyte.swiss/wp-content/uploads/2021/05/iStock-1271641693_Klima_Daten-1030x581.jpg",
+				"mediaType": "image",
+				"publishedAt": "2021-05-25"
+			},
+			"source": {
+				"name": "SocietyByte",
+				"url": "https://www.societybyte.swiss/",
+				"author": "Dr. Namrata Gurung"
+			}
+		},
+		{
+			"title": "Our experience at the HackTheClimate 2021",
+			"content": {
+				"description": "In March 2021 I came across the announcement of the climate hackathon 2021 organised by stratiteq and sponsored by Microsoft. In a few days a courageous team of data scientist & full-stack developers joined forces to tackle the challenge proposed by Cool Farm alliance..",
+				"url": "https://matteo-jriva.medium.com/our-experience-at-the-hacktheclimate-2021-28ae8e01700d",
+				"media": "https://miro.medium.com/max/2400/1*thmeXAcUAitMfZ0vcwIaFw.png",
+				"mediaType": "image",
+				"publishedAt": "2021-04-06"
+			},
+			"source": {
+				"name": "Medium",
+				"url": "https://www.medium.com/",
+				"author": "Matteo Jucker Riva"
+			}
+		},
+		{
+			"title": "LandPro v1",
+			"content": {
+				"description": "LandPro (Land Productivity monitoring app) is a machine learning based interface that harnesses the power of earth observation satellites, translating the data in relevant information for farmers, land managers and more.",
+				"url": "https://devpost.com/software/landpro",
+				"media": "https://www.youtube.com/embed/PndIC1rCxUU",
+				"mediaType": "video",
+				"publishedAt": "2021-03-26"
+			},
+			"source": {
+				"name": "Youtube",
+				"url": "https://devpost.com/",
+				"author": "Matteo Jucker Riva"
+			}
+		}
+	]
+}

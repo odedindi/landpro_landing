@@ -12,7 +12,7 @@ import { Button } from '@zendeskgarden/react-buttons';
 // ============================================================
 
 const SelectLanguage = () => {
-	const { t, i18n } = useTranslation('common');
+	const { t, i18n } = useTranslation('nav');
 	const router = useRouter();
 	const { locale: activeLocale, locales } = router;
 	const otherLocales = locales!.filter((locale) => locale !== activeLocale);

@@ -2,14 +2,16 @@
 import * as React from 'react';
 import Image from 'next/image';
 // ========================== styles ==========================
-import { Row, Col } from 'antd';
 import * as S from '../style';
+import { Row, Col } from 'antd';
 // ======================= translations =======================
 import { useTranslation } from 'next-i18next';
 // ======================== components ========================
 import { ContactPerson, GithubLink } from './IconLinks';
 import Container from '../Container';
 import { Logo } from 'components/Logo';
+// ============================================================
+
 const Footer = () => {
 	const { t } = useTranslation('footer');
 
@@ -37,9 +39,9 @@ const Footer = () => {
 				<Container>
 					<Row typeof="flex" justify="space-around">
 						<Col lg={24} md={24} sm={24} xs={24}>
-							<S.Title>{t('footer.company')}</S.Title>
-							<S.FooterLink href="/about">{t('footer.about')}</S.FooterLink>
-							<S.FooterLink href="/#">{t('footer.career')}</S.FooterLink>
+							<S.Title>LandPro</S.Title>
+							{/* <S.FooterLink href="/about">{t('footer.about')}</S.FooterLink> */}
+							{/* <S.FooterLink href="/#">{t('footer.career')}</S.FooterLink> */}
 						</Col>
 					</Row>
 					<Row justify="center">

@@ -1,4 +1,11 @@
 {
+	"languages": {
+		"selectLang": "Please select a different language",
+		"en": " English",
+		"de": " Deutsch",
+		"fr": " française"
+	},
+
 	"drawerTitle": "Menu",
 	"home": "Home",
 	"demo": "Map Demo",

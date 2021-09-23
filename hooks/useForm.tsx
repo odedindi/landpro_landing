@@ -1,7 +1,10 @@
+// ======================= React & Next =======================
 import * as React from 'react';
+// ========================== toast ===========================
 import toast from 'react-hot-toast';
+// ============================================================
 
-const useForm = (validate: Validate) => {
+export const useForm = (validate: Validate) => {
 	const [values, setValues] = React.useState({
 		name: '',
 		email: '',
@@ -42,11 +45,6 @@ const useForm = (validate: Validate) => {
 					_replyTo: '',
 				},
 			);
-
-			// const response = await fetch(url, {
-			// 	method: 'POST',
-			// 	body: JSON.stringify(body),
-			// });
 
 			const response = await fetch('/api/sendgrid', {
 				method: 'POST',

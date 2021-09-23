@@ -4,7 +4,7 @@ import { FooterLogo } from './FooterLogo';
 type LogoProps = {
 	type: 'NavBar' | 'Footer';
 };
-export const Logo: React.FC<LogoProps> = ({ type }) => {
+export const Logo = ({ type }: LogoProps) => {
 	if (type === 'NavBar') return <NavBarLogo height="100%" width="60%" />;
 	if (type === 'Footer') return <FooterLogo height="80%" width="90%" />;
 

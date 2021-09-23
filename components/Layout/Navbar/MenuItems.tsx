@@ -19,7 +19,7 @@ const MenuItems = () => {
 	return (
 		<>
 			<MenuItemsWrapper>
-				<ContactFrom id="contact" title={t('contact.title')} />
+				<ContactFrom id="contact" />
 				{pages.map(
 					(item: Page) =>
 						pathname !== item.path && (

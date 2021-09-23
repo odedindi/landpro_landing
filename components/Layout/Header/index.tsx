@@ -1,5 +1,8 @@
+// ======================= React & Next =======================
 import Head from 'next/head';
+// ======================= translations =======================
 import { useTranslation } from 'next-i18next';
+// ============================================================
 
 const Header = () => {
 	const { t } = useTranslation('common');

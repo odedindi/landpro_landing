@@ -19,7 +19,14 @@ export const LandProButton = styled(Button)`
 		border: solid 0.125em transparent;
 	}
 `;
-
+export const PhotoCredit = styled.p`
+	font-size: 0.75rem;
+	/* margin-bottom: 2rem; */
+	color: gray;
+	a {
+		color: gray;
+	}
+`;
 export const GlobalStyle = createGlobalStyle`
     body, html, a {
         font-family: 'Ubuntu', sans-serif;

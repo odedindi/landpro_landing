@@ -1,9 +1,6 @@
 // ====================== icons ===========================
 import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
-// import MapRoundedIcon from '@material-ui/icons/MapRounded';
-// import AssessmentRoundedIcon from '@material-ui/icons/AssessmentRounded';
 import FingerprintRoundedIcon from '@material-ui/icons/FingerprintRounded';
-
 import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
 import { routes } from 'utils/constants';
 // ========================================================
