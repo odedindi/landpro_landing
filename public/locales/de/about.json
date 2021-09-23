@@ -1,0 +1,19 @@
+{
+	"header": {
+		"title": "Über LandPro",
+		"description": "Gemeinsam den Klimawandel eindämmen",
+		"keywords": "Kohlenstoff, Kohlendioxid, Klimawandel, organischer Kohlenstoff im Boden, Soc, Vegetationsbedeckung"
+	},
+	"aboutLandPro": {
+		"title": "Was ist LandPro?",
+		"intro": "Derzeit ist LandPro eine einfache Schnittstelle, um Daten aus verschiedenen Quellen sinnvoll zu nutzen. Mit der Zeit kann LandPro zu einer Referenz für die Validierung der Selbstbewertung, den Austausch von Erfolgen und die Verbesserung der Akzeptanz positiver Praktiken bei Landwirten, Landbewirtschaftern und anderen werden.",
+		"co2 estimations": "Bessere Schätzungen der CO2-Absorption/-Emissionen können berechnet werden, indem der Landbedeckungstyp mit multispektralen Bildern kombiniert wird. Zu diesem Thema wurden mehrere wissenschaftliche Arbeiten veröffentlicht, und wir erwarten, dass sich Methoden und Modelle in naher Zukunft stark verbessern werden.",
+		"interactivity": "Mehr Interaktivität: das Ändern von Polygongrenzen, das Hinzufügen von räumlichen Elementen, das Beschreiben von Landmanagementpraktiken in jedem Teilbereich sind Funktionen, die leicht in die Benutzeroberfläche integriert werden können.",
+		"visualization": "Visualisierung von CO2-Änderungen in der Zeit: Wie ist der Trend, gab es in der jüngeren Vergangenheit große Veränderungen. SOC-Schätzungen könnten basierend auf Sentinel-Bildern und neuesten Stichprobendaten in Echtzeit aktualisiert werden.",
+		"comparison": "Vergleich mit Nachbargebieten: LandPro kann auf einfache Weise nicht nur über das vom Benutzer eingegebene Interessengebiet, sondern auch über benachbarte ähnliche Gebiete Auskunft geben. Dies könnte dem Benutzer eine Schätzung seiner Leistung liefern, aber auch Orte vorschlagen, an denen bessere Praktiken gefunden werden können.",
+		"bibliography": "LandPro basiert auf folgenden wissenschaftlichen Studien:"
+	},
+	"news": {
+		"title": "Neuesten Nachrichten"
+	}
+}

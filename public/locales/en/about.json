@@ -1,0 +1,19 @@
+{
+	"header": {
+		"title": "About LandPro",
+		"description": "Mitigating Climate Change together",
+		"keywords": "carbon, carbon dioxide, climate change, soil organic carbon, soc, vegetation coverage"
+	},
+	"aboutLandPro": {
+		"title": "What is LandPro?",
+		"intro": "Currently LandPro is a simple interface to harness data from different sources in a meaningful way. In time LandPro can become a reference for validating self-assessment, sharing successes and improve adoption of positive practices among farmers, land managers and more.",
+		"co2 estimations": "Better estimates of CO2 absorption /emissions can be calculated combining land cover type with multi-spectral images. Several scientific papers have been published on the topic, and we expect methods and models to improve greatly in the near future.",
+		"interactivity": "More interactivity: modifying polygons boundaries, adding spatial elements, describing land management practices each subareas are functionality that can be easily integrated within the user interface.",
+		"visualization": "Visualization of CO2 changes in time: What is the trend, have there been major changes in the recent past. SOC estimates could be updated real time based on sentinel images and latest sampling data.",
+		"comparison": "Comparison with neighboring areas: LandPro can easily provide information not only on the area of interest entered by the user, but also for the neighboring similar areas. This could provide the user of an estimates of its performance, but also suggest locations where better practices may be found.",
+		"bibliography": "LandPro is based on the following scientific studies:"
+	},
+	"news": {
+		"title": "Latest News"
+	}
+}

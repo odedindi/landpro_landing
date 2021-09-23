@@ -53,8 +53,8 @@ const PotentialUsers = () => {
 					<Card
 						key={user.id}
 						type="informative"
-						title={t(`about.section${user.id}Title`)}
-						text={t(`about.section${user.id}Content`)}
+						title={t(`users.section${user.id}Title`)}
+						text={t(`users.section${user.id}Content`)}
 						img={user.img}
 					/>
 				))}

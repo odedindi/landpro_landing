@@ -1,12 +1,14 @@
 // ======================= React & Next =======================
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 // ======================= translations =======================
 import { useTranslation } from 'next-i18next';
 // ============================================================
 
 const Header = () => {
-	const { t } = useTranslation('common');
-
+	const { t } = useTranslation(
+		useRouter().pathname === '/' ? 'common' : 'about',
+	);
 	return (
 		<Head>
 			<title>{t('header.title')}</title>

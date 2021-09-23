@@ -1,0 +1,19 @@
+{
+	"header": {
+		"title": "À propos de LandPro",
+		"description": "Atténuer le changement climatique ensemble",
+		"keywords": "carbone, dioxyde de carbone, changement climatique, carbone organique du sol, soc, couverture végétale"
+	},
+	"aboutLandPro": {
+		"title": "Qu'est-ce que Landpro ?",
+		"intro": "Actuellement, LandPro est une interface simple pour exploiter les données de différentes sources de manière significative. Avec le temps, LandPro peut devenir une référence pour valider l'auto-évaluation, partager les réussites et améliorer l'adoption de pratiques positives parmi les agriculteurs, les gestionnaires de terres et plus encore.",
+		"co2 estimations": "De meilleures estimations de l'absorption/des émissions de CO2 peuvent être calculées en combinant le type de couverture terrestre avec des images multispectrales. Plusieurs articles scientifiques ont été publiés sur le sujet, et nous nous attendons à ce que les méthodes et les modèles s'améliorent considérablement dans un proche avenir.",
+		"interactivity": "Plus d'interactivité : modifier les limites des polygones, ajouter des éléments spatiaux, décrire les pratiques de gestion des terres, chaque sous-zone sont des fonctionnalités qui peuvent être facilement intégrées dans l'interface utilisateur.",
+		"visualization": "Visualisation des changements de CO2 dans le temps : Quelle est la tendance, y a-t-il eu des changements majeurs dans un passé récent. Les estimations du SOC pourraient être mises à jour en temps réel sur la base des images sentinelles et des dernières données d'échantillonnage.",
+		"comparison": "Comparaison avec les zones voisines : LandPro peut facilement fournir des informations non seulement sur la zone d'intérêt saisie par l'utilisateur, mais aussi pour les zones voisines similaires. Cela pourrait fournir à l'utilisateur une estimation de ses performances, mais aussi suggérer des emplacements où de meilleures pratiques peuvent être trouvées.",
+		"bibliography": "LandPro est basé sur les études scientifiques suivantes :"
+	},
+	"news": {
+		"title": "Dernières nouvelles"
+	}
+}
