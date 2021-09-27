@@ -46,6 +46,21 @@
 			}
 		},
 		{
+			"title": "Climate hackathon - Winners announcement stream",
+			"content": {
+				"description": "Welcome to a hackathon dedicated to the climate. This hackathon is about you. It's about me. It's about us and the Earth. It's a hackathon about respect for the environment and to stand united for the climate, through our way of living. This is about sustainability. Nothing else can be more important.",
+				"url": "https://hacktheclimate.devpost.com/",
+				"media": "https://youtu.be/qxaURyEHPQs?t=1210",
+				"mediaType": "video",
+				"publishedAt": "2021-03-28"
+			},
+			"source": {
+				"name": "Youtube",
+				"url": "https://devpost.com/",
+				"author": "Matteo Jucker Riva"
+			}
+		},
+		{
 			"title": "LandPro v1",
 			"content": {
 				"description": "LandPro (Land Productivity monitoring app) is a machine learning based interface that harnesses the power of earth observation satellites, translating the data in relevant information for farmers, land managers and more.",
