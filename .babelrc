@@ -12,5 +12,6 @@
 				"preprocess": false
 			}
 		]
-	]
+	],
+	"compact": false
 }

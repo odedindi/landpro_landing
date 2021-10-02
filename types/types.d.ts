@@ -1,3 +1,11 @@
+type StarProps = {
+	background: string;
+	opacity: number;
+	size: number;
+	x: number;
+	y: number;
+};
+
 type ContentBlockProps = {
 	content: string;
 	icon: string;

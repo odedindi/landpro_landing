@@ -2,17 +2,24 @@ import styled from 'styled-components';
 import { device } from 'utils/mediaQueries';
 
 export const Hero = styled.div`
-	height: 70vh;
+	height: 85vh;
 	padding: 0 10rem;
 
 	${device.tablet} {
 		padding: 0 5rem;
 	}
 
-	background: #cedce7;
+	background: radial-gradient(#000, #262626);
+`;
 
-	background-image: url(/assets/imgs/one_world.png);
-	background-repeat: no-repeat;
-	background-size: contain;
-	background-position: center;
+export const Stars = styled.div`
+	height: 100%;
+	opacity: 0;
+	position: absolute;
+	width: 100%;
+`;
+
+export const Star = styled.div`
+	border-radius: 100%;
+	position: relative;
 `;
