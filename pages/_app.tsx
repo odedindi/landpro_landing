@@ -6,10 +6,10 @@ import Router from 'next/router';
 import 'antd/dist/antd.css'; // styles for antd'
 import 'nprogress/nprogress.css'; //styles of nprogress
 import 'styles/modified-carousel.css'; // styling for alice-carousel used in the Ayora example
+import { PageLayout } from 'components/Layout';
 // ======================== components ========================
 import NProgress from 'nprogress'; //nprogress module
 import Providers from 'components/Providers';
-import { PageLayout } from 'components/Layout';
 // ============================================================
 
 const MyApp = ({ Component, pageProps }: AppProps) => {

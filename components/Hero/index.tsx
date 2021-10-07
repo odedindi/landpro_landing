@@ -4,10 +4,10 @@ import * as React from 'react';
 import useScreenSize from 'use-screen-size';
 // ========================== styles ==========================
 import * as S from './style';
-// ============================================================
+// ======================== components ========================
 import Earth from './Earth';
-
 import Stars from './Stars';
+// ============================================================
 
 const LandProHero = () => {
 	const heroRef = React.useRef<HTMLDivElement>(null);

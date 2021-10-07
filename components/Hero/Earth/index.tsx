@@ -2,7 +2,6 @@ import * as React from 'react';
 import { Canvas, Vector3 } from '@react-three/fiber';
 
 import Planet from './Planet';
-import Atmosphere from './Atmosphere';
 
 export const Earth = () => {
 	const [dpr, setDpr] = React.useState<number | undefined>();
@@ -11,14 +10,11 @@ export const Earth = () => {
 			setDpr(window.devicePixelRatio);
 		}
 	}, []);
-	const planetScale: Vector3 = [0.3, 0.3, 0.3];
+	const planetScale: Vector3 = [0.2, 0.2, 0.205];
 	return (
 		<Canvas dpr={dpr} gl={{ antialias: true }}>
 			<React.Suspense fallback={null}>
 				<Planet scale={planetScale} />
-				<Atmosphere
-					scale={planetScale.map((scale) => scale * 1.05) as Vector3}
-				/>
 			</React.Suspense>
 		</Canvas>
 	);

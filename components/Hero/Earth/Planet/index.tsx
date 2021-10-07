@@ -1,15 +1,16 @@
 import * as THREE from 'three';
 import * as React from 'react';
 import { useFrame } from '@react-three/fiber';
-import planetVertexShader from './planetVertex.glsl';
-import planetFragmentShader from './planetFragment.glsl';
+// import planetVertexShader from './planetVertex.glsl';
+// import planetFragmentShader from './planetFragment.glsl';
 import useMousePosition from 'hooks/useMousePosition';
+import { useTexture } from '@react-three/drei';
 
 export const Planet = (props: JSX.IntrinsicElements['mesh']) => {
 	const mousePosition = useMousePosition();
 
 	const planetRef = React.useRef<THREE.Mesh>(null!);
-	// Set up state for the hovered and active state
+
 	const [hovered, setHover] = React.useState(false);
 	const [active, setActive] = React.useState(true);
 
@@ -24,16 +25,7 @@ export const Planet = (props: JSX.IntrinsicElements['mesh']) => {
 		}
 	});
 
-	const day = React.useMemo(() => {
-		const imgUrl = 'assets/textures/earth.jpg';
-		const textureLoader = new THREE.TextureLoader();
-		return {
-			globeTexture: {
-				type: 't',
-				value: textureLoader.load(imgUrl),
-			},
-		};
-	}, []);
+	const imgUrl = 'assets/textures/earth.jpg';
 
 	return (
 		<mesh
@@ -43,16 +35,7 @@ export const Planet = (props: JSX.IntrinsicElements['mesh']) => {
 			onPointerOver={(_event) => setHover(true)}
 			onPointerOut={(_event) => setHover(false)}>
 			<sphereGeometry args={[5, 50, 50]} />
-			<shaderMaterial
-				attach="material"
-				vertexShader={planetVertexShader}
-				fragmentShader={planetFragmentShader}
-				uniforms={day}
-			/>
-			{/* <meshBasicMaterial
-        attach="material"
-        map={useTexture(active ? "imgs/earth.jpg" : "imgs/earthNight.png")}
-      /> */}
+			<meshBasicMaterial attach="material" map={useTexture(imgUrl)} />
 		</mesh>
 	);
 };

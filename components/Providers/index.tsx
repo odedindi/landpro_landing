@@ -2,6 +2,7 @@
 import StyledTheme from './StyledTheme';
 import { ZenDeskGardenThemeProvide } from './ZenDeskGarden';
 import Toast from './Toaster';
+import Context from 'context';
 
 const Providers: React.FC = ({ children }) => (
 	<>
@@ -9,8 +10,7 @@ const Providers: React.FC = ({ children }) => (
 			<ZenDeskGardenThemeProvide>
 				{/* <SEO /> */}
 				<Toast />
-
-				{children}
+				<Context>{children}</Context>
 			</ZenDeskGardenThemeProvide>
 		</StyledTheme>
 	</>
