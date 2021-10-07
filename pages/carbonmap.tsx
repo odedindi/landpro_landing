@@ -10,9 +10,11 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 // ========================== hooks ===========================
 import { useMapCenter } from 'hooks/useMapCenter';
 import { usePolygonStore } from 'hooks/usePolygonStore';
-import toast from 'react-hot-toast';
 // ========================== actions =========================
 import * as PolygonActions from 'context/polygon/actions';
+// ========================== utils ===========================
+import notify from 'utils/notify';
+import fetcher from 'utils/fetcher';
 // =========================== GIS ============================
 import * as P from 'utils/GIS/dataPreparation';
 import { flyTo } from 'utils/GIS/flyTo';
@@ -55,14 +57,12 @@ const CarbonMap: NextPage = () => {
 
 	const SubmitButton = () => {
 		const handleSubmit = () => {
-			const notify = (type: 'success' | 'error', msg: string) =>
-				toast[type](msg, { position: 'top-center' });
 			const serverUrl = 'https://landpro.ch/api/polygons/new/';
+			notify('loading', 'Processing request...');
+			mapMarkings.map(async (marking) => {
+				const geoJSON = createGeoJSON(marking);
 
-			async function fetchData<T>(
-				geoJSON: NewlyCreatedGeoJSON,
-			): Promise<HttpResponse<T>> {
-				const config = {
+				const config: RequestInit = {
 					method: 'POST',
 					headers: new Headers({
 						'Content-Type': 'application/json',
@@ -70,27 +70,20 @@ const CarbonMap: NextPage = () => {
 					}),
 					body: JSON.stringify({ geoJSON }),
 				};
-				const response: HttpResponse<T> = await fetch(serverUrl, config);
-				try {
-					response.parsedBody = await response.json();
-				} catch (error) {}
 
-				if (!response.ok) {
-					throw new Error(response.statusText);
-				}
-				notify('success', 'Data analysed successfully');
-				return response;
-			}
-			mapMarkings.map(async (marking) => {
-				const geoJSON = createGeoJSON(marking);
-				let response: HttpResponse<PostNewGeoJSONResponse>;
 				try {
-					response = await fetchData(geoJSON);
+					const response = await fetcher<HttpResponse<NewGeoJSONResponse>>(
+						serverUrl,
+						config,
+					);
 
 					if (polygonDispatch) {
+						notify('success', 'Data analysed successfully');
 						polygonDispatch(
 							PolygonActions.addData(
-								P.preparePayload(response.parsedBody as PostNewGeoJSONResponse),
+								P.preparePayload(
+									response.parsedBody as unknown as NewGeoJSONResponse,
+								),
 							),
 						);
 						setMapMarkings([]);

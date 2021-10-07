@@ -12,7 +12,7 @@ export const colorByVegCO2Estimation = (vegCO2Value: number) => {
 };
 
 type PrepareResponseDataAndAddToShowList = (
-	fetchedData: PostNewGeoJSONResponse,
+	fetchedData: NewGeoJSONResponse,
 	setState?: (arg0: any[]) => void,
 ) => SubPolygonOnShowList[];
 export const prepareResponseDataAndAddToShowList: PrepareResponseDataAndAddToShowList =
@@ -65,7 +65,7 @@ export const editArray = (arr: Array<number[]>): GISLocation[] =>
 		longitude: coor[0],
 	}));
 
-export const editAnalysisData = (fetchedData: PostNewGeoJSONResponse) => {
+export const editAnalysisData = (fetchedData: NewGeoJSONResponse) => {
 	const parsedData = JSON.parse(fetchedData.data as unknown as string);
 
 	const mapPolygonLayerData = prepareResponseDataAndAddToShowList(fetchedData);
@@ -96,7 +96,7 @@ export const editAnalysisData = (fetchedData: PostNewGeoJSONResponse) => {
 	};
 };
 
-export const preparePayload = (fetchedData: PostNewGeoJSONResponse) => {
+export const preparePayload = (fetchedData: NewGeoJSONResponse) => {
 	console.log('fetchedData arriving to preparePayload: ', fetchedData);
 
 	let originalPolygonCoordinates = editArray(

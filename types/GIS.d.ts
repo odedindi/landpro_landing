@@ -38,7 +38,7 @@ type AnalyzedFeature = {
 		coordinates: Coordinates[][];
 	};
 };
-type PostNewGeoJSONResponse = {
+type NewGeoJSONResponse = {
 	id: number;
 	created: string;
 	updated: string;
