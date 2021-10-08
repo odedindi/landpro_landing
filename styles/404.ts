@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { device } from 'utils/mediaQueries';
+import { device } from 'styles/mediaQueries';
 
 const root = {
 	blue: '#0e0620',

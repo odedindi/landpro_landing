@@ -17,7 +17,7 @@ type FetchReducer<T> = (
 
 type Cache<T> = { [url: string]: T };
 
-export const useFetch = <T = unknown>({
+export const useFetch = <T,>({
 	url,
 	options,
 }: {

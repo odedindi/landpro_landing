@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { device } from 'utils/mediaQueries';
+import { device } from 'styles/mediaQueries';
 
 export const PageWrapper = styled.main`
 	padding: 1rem 0 5rem;

@@ -7,32 +7,38 @@ import * as S from 'styles/pages';
 // ======================= translations =======================
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+// ========================== hooks ===========================
+import { useDidMount } from 'hooks/useDidMount';
 // ======================== components ========================
 import { Well, Title } from '@zendeskgarden/react-notifications';
-import { Paragraph, SM, MD, LG } from '@zendeskgarden/react-typography';
+import { Paragraph, SM } from '@zendeskgarden/react-typography';
 
 const MiddleBlock = dynamic(() => import('components/ContentBlock/Middle'));
 const Card = dynamic(() => import('components/Card'));
 // ============================================================
 
+const BibliographyLink = ({
+	content,
+	url,
+}: {
+	content: string;
+	url: string;
+}) => (
+	<Paragraph size="small">
+		<SM tag="span">
+			<a href={url} target="_blank" rel="noreferrer">
+				{content}
+			</a>
+		</SM>
+	</Paragraph>
+);
+
 const About: NextPage<{ newsFeed: Article[] }> = ({ newsFeed }) => {
+	const didMount = useDidMount();
+
 	const { t } = useTranslation('about');
 
-	const BibliographyLink = ({
-		content,
-		url,
-	}: {
-		content: string;
-		url: string;
-	}) => (
-		<Paragraph size="small">
-			<SM tag="span">
-				<a href={url} target="_blank" rel="noreferrer">
-					{content}
-				</a>
-			</SM>
-		</Paragraph>
-	);
+	if (!didMount) return null;
 	return (
 		<S.PageWrapper>
 			<MiddleBlock title={t('aboutLandPro.title')} id="about" />

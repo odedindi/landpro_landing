@@ -1,5 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components';
-import { device } from 'utils/mediaQueries';
+import { device } from 'styles/mediaQueries';
 import { Button } from '@zendeskgarden/react-buttons';
 
 export const LandProButton = styled(Button)`

@@ -1,10 +1,17 @@
 type Zoom = number;
 
-type GeoLocation = LatLngExpression;
+type Latitude = number;
+type Longitude = number;
 
-type LeafletMapMarking = { lat: number; lng: number };
+type GeoLocation = { latitude: Latitude; longitude: Longitude };
 
-type MapMarkings = { id: number; latlngs: LeafletMapMarking[] };
+type LeafletGeolocation = { lat: Latitude; lng: Longitude };
+type LeafletGeometryElement = { id: number; latlngs: LeafletGeolocation[] };
+
+type LatLngCoordinates = [Latitude, Longitude];
+type LngLatCoordinates = [Longitude, Latitude];
+
+type Coordinates = LatLngCoordinates | LngLatCoordinates;
 
 type NewlyCreatedGeoJSON = {
 	type: string;
@@ -23,7 +30,6 @@ interface HttpResponse<T> extends Response {
 	parsedBody?: T;
 }
 
-type Coordinates = number[];
 type AnalyzedFeature = {
 	id: string;
 	type: 'Feature';
@@ -88,15 +94,6 @@ type LandCover =
 	| 'Mixed'
 	| 'Other-open-forest'
 	| 'Oceans';
-
-type GISLocation = {
-	latitude: number;
-	longitude: number;
-};
-type Locations = Array<{
-	latitude: number;
-	longitude: number;
-}>;
 
 type SubPolygonOnShowList = {
 	id: string | number;

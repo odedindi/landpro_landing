@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { device } from 'utils/mediaQueries';
+import { device } from 'styles/mediaQueries';
 
 export const Body = styled.body`
 	background-color: #000000;

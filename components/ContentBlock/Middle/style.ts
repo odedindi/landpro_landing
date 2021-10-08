@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { device } from 'utils/mediaQueries';
+import { device } from 'styles/mediaQueries';
 
 export const MiddleBlock = styled.section`
 	padding: 0.5rem 0 0;

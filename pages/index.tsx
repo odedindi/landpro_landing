@@ -8,6 +8,10 @@ import { Row } from 'antd';
 // ======================= translations =======================
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+// ========================== hooks ===========================
+import { useDidMount } from 'hooks/useDidMount';
+// ========================== utils ===========================
+import scrollTo from 'utils/scrollTo';
 // ======================== components ========================
 const AyoraExample = dynamic(() => import('components/AyoraExample'));
 const ContactFrom = dynamic(() => import('components/ContactForm'));
@@ -17,15 +21,8 @@ const MiddleBlock = dynamic(() => import('components/ContentBlock/Middle'));
 // ============================================================
 
 const Home: NextPage = () => {
-	const [didMount, setDidMount] = React.useState(false);
-	React.useEffect(() => setDidMount(true), []);
-
+	const didMount = useDidMount();
 	const { t } = useTranslation('common');
-
-	const scrollTo = (id: string) => {
-		const element = document.getElementById(id);
-		if (element) element.scrollIntoView({ behavior: 'smooth' });
-	};
 
 	const PageNavi = () => (
 		<>

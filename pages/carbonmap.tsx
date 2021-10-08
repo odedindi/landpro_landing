@@ -10,15 +10,15 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 // ========================== hooks ===========================
 import { useMapCenter } from 'hooks/useMapCenter';
 import { usePolygonStore } from 'hooks/usePolygonStore';
+import { useDidMount } from 'hooks/useDidMount';
 // ========================== actions =========================
 import * as PolygonActions from 'context/polygon/actions';
 // ========================== utils ===========================
 import notify from 'utils/notify';
 import fetcher from 'utils/fetcher';
 // =========================== GIS ============================
-import * as P from 'utils/GIS/dataPreparation';
 import { flyTo } from 'utils/GIS/flyTo';
-import { createGeoJSON } from 'utils/GIS/DataPreparation/prepareToPost';
+import { generateGeoJSON, preparePayload } from 'utils/GIS/DataPreparation';
 // ========================== icons ===========================
 import BorderColorRoundedIcon from '@material-ui/icons/BorderColorRounded';
 import MapRoundedIcon from '@material-ui/icons/MapRounded';
@@ -28,21 +28,25 @@ import { Well, Title } from '@zendeskgarden/react-notifications';
 import { Row, Col } from '@zendeskgarden/react-grid';
 import { Stepper } from '@zendeskgarden/react-accordions';
 import { Button } from '@zendeskgarden/react-buttons';
+import { LatLngExpression } from 'leaflet';
 const Map = dynamic(() => import('components/Map'), { ssr: false });
 // ============================================================
 
 const CarbonMap: NextPage = () => {
+	const didMount = useDidMount();
 	const { t } = useTranslation('carbonMap');
 
 	// map settings
 	const [zoom] = React.useState<Zoom>(12);
-	const [startGeoLocation] = React.useState<GeoLocation>([47.0227, 8.303]);
+	const [startGeoLocation] = React.useState<LatLngExpression>([47.0227, 8.303]);
 	const [mapCenter, setMapCenter] = useMapCenter();
 
 	// user marked poylgons
 	const { polygonState, polygonDispatch } = usePolygonStore();
 
-	const [mapMarkings, setMapMarkings] = React.useState<MapMarkings[]>([]);
+	const [mapMarkings, setMapMarkings] = React.useState<
+		LeafletGeometryElement[]
+	>([]);
 	const [canSubmit, setCanSubmit] = React.useState(false);
 	React.useEffect(() => {
 		mapMarkings.length > 0 ? setCanSubmit(true) : setCanSubmit(false);
@@ -60,7 +64,7 @@ const CarbonMap: NextPage = () => {
 			const serverUrl = 'https://landpro.ch/api/polygons/new/';
 			notify('loading', 'Processing request...');
 			mapMarkings.map(async (marking) => {
-				const geoJSON = createGeoJSON(marking);
+				const geoJSON = generateGeoJSON(marking);
 
 				const config: RequestInit = {
 					method: 'POST',
@@ -81,7 +85,7 @@ const CarbonMap: NextPage = () => {
 						notify('success', 'Data analysed successfully');
 						polygonDispatch(
 							PolygonActions.addData(
-								P.preparePayload(
+								preparePayload(
 									response.parsedBody as unknown as NewGeoJSONResponse,
 								),
 							),
@@ -89,8 +93,7 @@ const CarbonMap: NextPage = () => {
 						setMapMarkings([]);
 					}
 				} catch (response) {
-					notify('error', 'Error: Data was not sent!');
-					console.log('Error', response);
+					notify('error', `Error(${response}): Data was not sent!`);
 				}
 			});
 		};
@@ -142,6 +145,7 @@ const CarbonMap: NextPage = () => {
 		},
 	];
 
+	if (!didMount) return null;
 	return (
 		<Well isFloating>
 			<Row justifyContent="center">

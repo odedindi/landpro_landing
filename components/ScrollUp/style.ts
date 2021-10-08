@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from 'styled-components';
-import { device } from 'utils/mediaQueries';
+import { device } from 'styles/mediaQueries';
 
 const fadein = keyframes`
 	    from { opacity: 0; }

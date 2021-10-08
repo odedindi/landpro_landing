@@ -13,20 +13,25 @@ import {
 	MapContainer,
 	Tooltip,
 } from 'react-leaflet';
-import { CRS } from 'leaflet';
+import L, { CRS, LatLngExpression } from 'leaflet';
 import { EditControl } from 'react-leaflet-draw';
 import Tiles from './Tiles';
-import * as GIS from 'utils/GIS';
 import { GeoJsonObject } from 'geojson';
+
+// =================== geometry handlers ===================
+import * as Handle from './geometryHandlers';
 // ====================== components ======================
+import MapConfig from './Config';
 // import TooltipTable from './subpolygonTooltipTable';
 // ========================================================
 
 type MapProps = {
-	startGeoLocation: GeoLocation;
+	startGeoLocation: LatLngExpression;
 	zoom: Zoom;
 	setMapCenter: React.Dispatch<React.SetStateAction<L.Map>>;
-	setMapMarkings: React.Dispatch<React.SetStateAction<MapMarkings[]>>;
+	setMapMarkings: React.Dispatch<
+		React.SetStateAction<LeafletGeometryElement[]>
+	>;
 	responseCoordinates: any;
 };
 
@@ -46,19 +51,13 @@ const Map = ({
 			whenCreated={setMapCenter}
 			scrollWheelZoom={false}
 			layers={[]}>
-			<GIS.MapLoadSearchSettings />
+			<MapConfig />
 			<FeatureGroup>
 				<EditControl
 					position="topright"
-					onCreated={(event: { layerType: any; layer: any }) =>
-						GIS.onCreateHandler(event, setMapMarkings)
-					}
-					onEdited={(event: { layers: { _layers: any } }) =>
-						GIS.onEditHandler(event, setMapMarkings)
-					}
-					onDeleted={(event: { layers: { _layers: any } }) =>
-						GIS.onDeleteHandler(event, setMapMarkings)
-					}
+					onCreated={(event: any) => Handle.create(event, setMapMarkings)}
+					onEdited={(event: any) => Handle.edit(event, setMapMarkings)}
+					onDeleted={(event: any) => Handle.del(event, setMapMarkings)}
 					draw={{
 						rectangle: false,
 						polyline: false,

@@ -29,7 +29,7 @@ const calculateXSegment = (
 	);
 };
 
-export const calcArea = (locations: GISLocation[]) => {
+export const calcArea = (locations: GeoLocation[]) => {
 	if (!locations.length) {
 		return 0;
 	}

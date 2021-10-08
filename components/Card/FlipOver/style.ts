@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { device } from 'utils/mediaQueries';
+import { device } from 'styles/mediaQueries';
 
 export const Card = styled.div`
 	width: calc(30% - 2rem);

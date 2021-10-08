@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { device } from 'utils/mediaQueries';
+import { device } from 'styles/mediaQueries';
 import { NavBarButton } from 'components/Layout/style';
 import { Body, Modal } from '@zendeskgarden/react-modals';
 

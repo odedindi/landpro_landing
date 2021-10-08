@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import { device } from 'utils/mediaQueries';
+import { device } from 'styles/mediaQueries';
 
 export const CardsWrapper = styled.section`
 	height: 100%;
