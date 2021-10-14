@@ -1,25 +1,23 @@
-const getGeoLocation = () => {
-	let status: LeafletGeolocation | string;
+export const getGeoLocation = (): Coordinates | string | undefined => {
+	let status: Coordinates | string;
 
-	const success = (position: { coords: GeoLocation }) => {
-		const latitude = position.coords.latitude;
-		const longitude = position.coords.longitude;
-
-		status = { lat: latitude, lng: longitude };
+	const success = (position: { coords: GeoLocation }): Coordinates => {
+		const { latitude, longitude } = position.coords;
+		status = [latitude, longitude] as Coordinates;
 		return status;
 	};
 
-	const error = () => {
-		status = 'Unable to retrieve your location';
+	const error = (): string => {
+		status = 'Unable to retrieve location';
 		return status;
 	};
 
 	if (!navigator.geolocation) {
-		status = 'Geolocation is not supported by your browser';
+		let status = 'Geolocation is not supported';
 		return status;
-	} else {
-		navigator.geolocation.getCurrentPosition(success, error);
 	}
+
+	navigator.geolocation.getCurrentPosition(success, error);
 };
 
 export default getGeoLocation;

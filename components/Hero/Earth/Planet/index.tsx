@@ -1,8 +1,6 @@
 import * as THREE from 'three';
 import * as React from 'react';
 import { useFrame } from '@react-three/fiber';
-// import planetVertexShader from './planetVertex.glsl';
-// import planetFragmentShader from './planetFragment.glsl';
 import useMousePosition from 'hooks/useMousePosition';
 import { useTexture } from '@react-three/drei';
 

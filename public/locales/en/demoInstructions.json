@@ -1,0 +1,21 @@
+{
+	"buttons": {
+		"next": "Next",
+		"back": "Back",
+		"toUser": "Find Me"
+	},
+	"steps": {
+		"1": {
+			"label": "Carbon Map",
+			"content": "Please start by selectin an area."
+		},
+		"2": {
+			"label": "Area Selection",
+			"content": "Please mark a polygon on the map and when ready press on the submit button."
+		},
+		"3": {
+			"label": "Data recieved",
+			"content": "vegetation contains: [x]CO/ton, soil contains: [y]CO/ton."
+		}
+	}
+}

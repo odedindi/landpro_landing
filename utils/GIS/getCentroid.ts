@@ -1,8 +1,9 @@
+import { LatLngExpression } from 'leaflet';
 /*
  An implementation based on the formula for a 
  centroid of a non-self-intersecting closed polygon
 */
-export const getCentroid = (arr: GeoLocation[]) => {
+export const getCentroid = (arr: GeoLocation[]): LatLngExpression => {
 	let data = arr.map((coor) => [coor.latitude, coor.longitude]);
 	let twoTimesSignedArea = 0;
 	let cxTimes6SignedArea = 0;
@@ -25,3 +26,5 @@ export const getCentroid = (arr: GeoLocation[]) => {
 		cyTimes6SignedArea / sixSignedArea,
 	];
 };
+
+export default getCentroid;

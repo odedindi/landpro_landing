@@ -8,9 +8,7 @@ type AuthContextType = {
 	userState: AuthState;
 	dispatch: React.Dispatch<AuthActionType>;
 };
-const AuthContext = React.createContext<Partial<AuthContextType>>({
-	userState: initialUserState,
-});
+const AuthContext = React.createContext<AuthContextType>(undefined!);
 
 const { Provider } = AuthContext;
 

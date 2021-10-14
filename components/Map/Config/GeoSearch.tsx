@@ -23,7 +23,7 @@ const GeoSearchSettings = () => {
 		provider: new OpenStreetMapProvider(),
 		autoComplete: true,
 		autoCompleteDelay: 350,
-		style: 'bar',
+		// style: 'bar', // default is button
 		maxSuggestions: 5,
 		marker: {
 			markerIcon,

@@ -17,18 +17,15 @@ import * as PolygonActions from 'context/polygon/actions';
 import notify from 'utils/notify';
 import fetcher from 'utils/fetcher';
 // =========================== GIS ============================
-import { flyTo } from 'utils/GIS/flyTo';
 import { generateGeoJSON, preparePayload } from 'utils/GIS/DataPreparation';
-// ========================== icons ===========================
-import BorderColorRoundedIcon from '@material-ui/icons/BorderColorRounded';
-import MapRoundedIcon from '@material-ui/icons/MapRounded';
-import BubbleChartRoundedIcon from '@material-ui/icons/BubbleChartRounded';
-// ======================== components ========================
-import { Well, Title } from '@zendeskgarden/react-notifications';
-import { Row, Col } from '@zendeskgarden/react-grid';
-import { Stepper } from '@zendeskgarden/react-accordions';
-import { Button } from '@zendeskgarden/react-buttons';
+// =========================== types ==========================
 import { LatLngExpression } from 'leaflet';
+// ======================== components ========================
+import { Well } from '@zendeskgarden/react-notifications';
+
+import { Button } from '@zendeskgarden/react-buttons';
+import PlotsTable from 'components/DataTables/PlotsTable';
+import DemoInstructions from 'components/DemoInstructions';
 const Map = dynamic(() => import('components/Map'), { ssr: false });
 // ============================================================
 
@@ -39,27 +36,37 @@ const CarbonMap: NextPage = () => {
 	// map settings
 	const [zoom] = React.useState<Zoom>(12);
 	const [startGeoLocation] = React.useState<LatLngExpression>([47.0227, 8.303]);
-	const [mapCenter, setMapCenter] = useMapCenter();
+	const { mapCenter, setMapCenter } = useMapCenter();
 
-	// user marked poylgons
-	const { polygonState, polygonDispatch } = usePolygonStore();
+	// map & user poylgons store
+	const {
+		mapGeometry: { mapMarkings },
+		userGeometry: { polygonState },
+	} = usePolygonStore();
 
-	const [mapMarkings, setMapMarkings] = React.useState<
-		LeafletGeometryElement[]
+	// response multipolygon data to show on the map
+	const [subPolygonShowList, setSubPolygonShowList] = React.useState<
+		SubPolygonOnShowList[]
 	>([]);
+	React.useEffect(() => {
+		setSubPolygonShowList(polygonState.subPolygonsToShow);
+	}, [polygonState.subPolygonsToShow]);
+
+	React.useEffect(() => {
+		if (process.env.NODE_ENV === 'development')
+			console.log('polygonState: ', polygonState);
+	}, [polygonState]);
+
 	const [canSubmit, setCanSubmit] = React.useState(false);
 	React.useEffect(() => {
 		mapMarkings.length > 0 ? setCanSubmit(true) : setCanSubmit(false);
-	}, [mapMarkings]);
-
-	// response multipolygon data to show on the map
-	const [responseCoordinates, setResponseCoordinates] =
-		React.useState<SubPolygonType>([]);
-	React.useEffect(() => {
-		setResponseCoordinates(polygonState!.subPolygonsToShow);
-	}, [polygonState]);
+	}, [mapMarkings.length]);
 
 	const SubmitButton = () => {
+		const {
+			userGeometry: { polygonDispatch },
+			mapGeometry: { mapMarkings, setMapMarkings },
+		} = usePolygonStore();
 		const handleSubmit = () => {
 			const serverUrl = 'https://landpro.ch/api/polygons/new/';
 			notify('loading', 'Processing request...');
@@ -81,17 +88,15 @@ const CarbonMap: NextPage = () => {
 						config,
 					);
 
-					if (polygonDispatch) {
-						notify('success', 'Data analysed successfully');
-						polygonDispatch(
-							PolygonActions.addData(
-								preparePayload(
-									response.parsedBody as unknown as NewGeoJSONResponse,
-								),
+					notify('success', 'Data analysed successfully');
+					polygonDispatch(
+						PolygonActions.addData(
+							preparePayload(
+								response.parsedBody as unknown as NewGeoJSONResponse,
 							),
-						);
-						setMapMarkings([]);
-					}
+						),
+					);
+					setMapMarkings([]);
 				} catch (response) {
 					notify('error', `Error(${response}): Data was not sent!`);
 				}
@@ -105,89 +110,17 @@ const CarbonMap: NextPage = () => {
 		);
 	};
 
-	const [currentStep, setStep] = React.useState(1);
-	const onNext = () => setStep(currentStep + 1);
-	const onBack = () => setStep(currentStep - 1);
-
-	const steps = [
-		{
-			id: 1,
-			icon: <MapRoundedIcon fontSize="inherit" />,
-			label: 'Carbon Map',
-			content: `Please start by selectin an area.`,
-			buttons: <Button onClick={onNext}>Next</Button>,
-		},
-		{
-			id: 2,
-			icon: <BorderColorRoundedIcon fontSize="inherit" />,
-			label: 'Area Selection',
-			content: `Please mark a polygon on the map and when ready press on the submit button`,
-			buttons: (
-				<>
-					<Button onClick={onBack}>Back</Button>
-					<Button onClick={() => flyTo(mapCenter as L.Map, { to: 'user' })}>
-						to user
-					</Button>
-					<Button onClick={() => setCanSubmit(!canSubmit)}>
-						change can submit
-					</Button>
-					<SubmitButton />
-					<Button onClick={onNext}>Next</Button>
-				</>
-			),
-		},
-		{
-			id: 3,
-			icon: <BubbleChartRoundedIcon fontSize="inherit" />,
-			label: 'Data recieved',
-			content: 'vegetation contains: [x]CO/ton, soil contains: [y]CO/ton.',
-			buttons: <Button onClick={onBack}>Back</Button>,
-		},
-	];
-
 	if (!didMount) return null;
 	return (
 		<Well isFloating>
-			<Row justifyContent="center">
-				<Col sm={10} textAlign="center">
-					<Title>
-						<Stepper activeIndex={currentStep - 1} isHorizontal>
-							{steps.map((step) => (
-								<Stepper.Step key={step.id}>
-									<Stepper.Label icon={step.icon}>{step.label}</Stepper.Label>
-								</Stepper.Step>
-							))}
-						</Stepper>
-					</Title>
-					{steps.map(
-						(step) =>
-							step.id === currentStep && (
-								<div
-									className="container"
-									key={step.id}
-									style={{ margin: '1rem 0 0 0' }}>
-									{step.content}
-									<div
-										className="button"
-										style={{ marginTop: '1rem', padding: '1rem' }}>
-										{step.buttons}
-									</div>
-								</div>
-							),
-					)}
-				</Col>
-			</Row>
-			<div style={{ width: '100%', background: 'gray', height: '70vh' }}>
-				<Map
-					startGeoLocation={startGeoLocation}
-					zoom={zoom}
-					setMapCenter={
-						setMapCenter as React.Dispatch<React.SetStateAction<L.Map>>
-					}
-					setMapMarkings={setMapMarkings}
-					responseCoordinates={responseCoordinates}
-				/>
-			</div>
+			<DemoInstructions mapCenter={mapCenter} />
+			<Map
+				startGeoLocation={startGeoLocation}
+				zoom={zoom}
+				setMapCenter={setMapCenter}
+				subPolygonShowList={subPolygonShowList}
+			/>
+			<PlotsTable />
 		</Well>
 	);
 };
@@ -197,6 +130,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => ({
 		...(await serverSideTranslations(locale as string, [
 			'nav',
 			'contactForm',
+			'demoInstructions',
 			'carbonMap',
 			'footer',
 		])),

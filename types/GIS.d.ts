@@ -30,7 +30,7 @@ interface HttpResponse<T> extends Response {
 	parsedBody?: T;
 }
 
-type AnalyzedFeature = {
+type AnalysedFeature = {
 	id: string;
 	type: 'Feature';
 	properties: {
@@ -43,6 +43,10 @@ type AnalyzedFeature = {
 		type: 'Polygon';
 		coordinates: Coordinates[][];
 	};
+};
+type AnalysedFeatureCollection = {
+	type: 'FeatureCollection';
+	features: Array<AnalysedFeature>;
 };
 type NewGeoJSONResponse = {
 	id: number;
@@ -61,10 +65,7 @@ type NewGeoJSONResponse = {
 			};
 		}>;
 	};
-	data: {
-		type: 'FeatureCollection';
-		features: Array<AnalyzedFeature>;
-	};
+	data: AnalysedFeatureCollection;
 };
 
 type LandCover =
@@ -87,27 +88,24 @@ type LandCover =
 	| 'Mixed-closed-forest'
 	| 'Other-closed-forest'
 	| 'Open-forest'
-	| 'Evergreen-needle-leaf'
-	| 'Evergreen-broad-leaf'
-	| 'Deciduous-needle-leaf'
-	| 'Deciduous-broad-leaf'
 	| 'Mixed'
 	| 'Other-open-forest'
 	| 'Oceans';
 
 type SubPolygonOnShowList = {
-	id: string | number;
-	polygonName: string;
-	landCover: LandCover;
-	coordinates: Coordinates[][];
-	soil_co_estimates: number;
-	veg_co_estimates: number;
-	geometry: {
-		type: string;
-		coordinates: Coordinates[][];
-	};
 	area: {
 		m2: number;
 		ha: number;
 	};
+	color: string;
+	coordinates: Coordinates[][];
+	geometry: {
+		type: string;
+		coordinates: Coordinates[][];
+	};
+	id: string | number;
+	landCover: LandCover;
+	polygonName: string;
+	soil_co_estimates: number;
+	veg_co_estimates: number;
 };

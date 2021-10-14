@@ -1,46 +1,33 @@
 // ======================= React & Next =======================
 import * as React from 'react';
+import dynamic from 'next/dynamic';
 // ========================== styles ==========================
 import * as S from './style';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet-draw/dist/leaflet.draw.css';
 import 'leaflet-geosearch/dist/geosearch.css';
-// ========================= GIS ==========================
-import {
-	FeatureGroup,
-	GeoJSON,
-	LayersControl,
-	MapContainer,
-	Tooltip,
-} from 'react-leaflet';
+import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css';
+import 'leaflet-defaulticon-compatibility';
+// =========================== GIS ============================
+import { MapContainer } from 'react-leaflet';
 import L, { CRS, LatLngExpression } from 'leaflet';
-import { EditControl } from 'react-leaflet-draw';
-import Tiles from './Tiles';
-import { GeoJsonObject } from 'geojson';
-
-// =================== geometry handlers ===================
-import * as Handle from './geometryHandlers';
-// ====================== components ======================
+// ======================== components ========================
 import MapConfig from './Config';
-// import TooltipTable from './subpolygonTooltipTable';
-// ========================================================
+const SubPolygon = dynamic(() => import('./SubPolygon'));
+// ============================================================
 
 type MapProps = {
 	startGeoLocation: LatLngExpression;
 	zoom: Zoom;
 	setMapCenter: React.Dispatch<React.SetStateAction<L.Map>>;
-	setMapMarkings: React.Dispatch<
-		React.SetStateAction<LeafletGeometryElement[]>
-	>;
-	responseCoordinates: any;
+	subPolygonShowList: SubPolygonOnShowList[];
 };
 
 const Map = ({
 	startGeoLocation,
 	zoom,
 	setMapCenter,
-	setMapMarkings,
-	responseCoordinates,
+	subPolygonShowList,
 }: MapProps) => (
 	<S.MapWrapper>
 		<MapContainer
@@ -52,45 +39,12 @@ const Map = ({
 			scrollWheelZoom={false}
 			layers={[]}>
 			<MapConfig />
-			<FeatureGroup>
-				<EditControl
-					position="topright"
-					onCreated={(event: any) => Handle.create(event, setMapMarkings)}
-					onEdited={(event: any) => Handle.edit(event, setMapMarkings)}
-					onDeleted={(event: any) => Handle.del(event, setMapMarkings)}
-					draw={{
-						rectangle: false,
-						polyline: false,
-						circle: false,
-						circlemarker: false,
-						marker: false,
-					}}
-				/>
-			</FeatureGroup>
-			<LayersControl position="topleft">
-				<Tiles />
-			</LayersControl>
-			{responseCoordinates.length &&
-				responseCoordinates.map(
-					(feature: {
-						id: React.Key | null | undefined;
-						geometry: GeoJsonObject;
-						landCover: any;
-					}) => (
-						<GeoJSON
-							key={feature.id}
-							data={feature.geometry}
-							pathOptions={{
-								color: feature.landCover,
-								fillOpacity: 0.578,
-							}}>
-							<Tooltip sticky>
-								{/* <TooltipTable feature={feature} /> */}
-							</Tooltip>
-						</GeoJSON>
-					),
-				)}
+			{subPolygonShowList.length &&
+				subPolygonShowList.map((subPolygon) => (
+					<SubPolygon key={subPolygon.id} subPolygon={subPolygon} />
+				))}
 		</MapContainer>
 	</S.MapWrapper>
 );
+
 export default Map;

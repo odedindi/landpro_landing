@@ -4,8 +4,6 @@ import * as React from 'react';
 import * as THREE from 'three';
 import { Canvas, ThreeEvent, useFrame, useThree } from '@react-three/fiber';
 import { OrbitControls, Text, TrackballControls } from '@react-three/drei';
-// ======================== components ========================
-import Loading from 'components/LoadingFallback';
 // ============================================================
 
 const CameraControls = () => {
@@ -120,7 +118,7 @@ export const useWordCloud = (wordsList: string[]) => {
 	const WordCloud = () => (
 		<Canvas dpr={[1, 2]} camera={{ position: [10, 10, 45], fov: 90 }}>
 			<fog attach="fog" args={['#202025', 0, 80]} />
-			<React.Suspense fallback={<Loading />}>
+			<React.Suspense fallback={null}>
 				<Cloud count={5} radius={28} wordsList={wordsList} />
 			</React.Suspense>
 			{/* <CameraControls /> */}

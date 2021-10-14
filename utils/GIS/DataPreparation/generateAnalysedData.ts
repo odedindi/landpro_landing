@@ -6,14 +6,16 @@ import {
 import { calcArea } from '../calcArea';
 
 const generateAnalysedData = (fetchedData: NewGeoJSONResponse) => {
-	const parsedData = JSON.parse(fetchedData.data as unknown as string);
-
+	const parsedData: AnalysedFeatureCollection = JSON.parse(
+		fetchedData.data as unknown as string,
+	);
+	// console.log("parsedData: ", parsedData)
 	const mapPolygonLayerData =
 		prepareAnalysedDataAndMaybeAddToShowList(fetchedData);
 	return {
 		type: parsedData.type,
 		subPolygons: [
-			parsedData.features.map((feature: AnalyzedFeature, index: number) => {
+			parsedData.features.map((feature: AnalysedFeature, index: number) => {
 				let subPolygonCoordinates = setFirstLatThenLngArray(
 					feature.geometry.coordinates[0],
 				);

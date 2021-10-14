@@ -3,5 +3,38 @@
 		"title": "LandPro - Carbon Map",
 		"description": "Mitigating Climate Change together",
 		"keywords": "carbon, carbon dioxide, climate change, soil organic carbon, soc, vegetation coverage"
+	},
+	"outerTable": {
+		"id": "ID",
+		"date": "Date",
+		"area_ha": "Area Ha",
+		"area_m2": "Area \u33A1",
+		"plotName": "Plot Name",
+		"footer": {
+			"confirmDelete": "Delete Plot?"
+		}
+	},
+	"innerTable": {
+		"status": {
+			"updated": "Updated"
+		},
+		"lastUpdate": "Last Update",
+		"area": "Area (%)",
+		"carbon": "Carbon",
+		"veg": "Vegetation",
+		"soil": "Soil",
+		"options": "Options",
+		"updateMenuBtn": "Update",
+		"reportMenuBtn": "Report"
+	},
+	"toolTipTable": {
+		"area_ha": "Area Ha",
+		"carbon": "Carbon",
+		"landCover": "Land Cover",
+		"veg": "Vegetation",
+		"soil": "Soil"
+	},
+	"buttons": {
+		"toUser": "Find Me"
 	}
 }

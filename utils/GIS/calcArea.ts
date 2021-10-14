@@ -74,3 +74,5 @@ export const calcArea = (locations: GeoLocation[]) => {
 	let areaCalc = Math.abs(areasSum); // Math.sqrt(areasSum * areasSum);
 	return areaCalc;
 };
+
+export default calcArea;

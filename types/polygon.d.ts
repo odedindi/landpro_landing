@@ -1,44 +1,73 @@
-// state
-type TableDataType = any;
-type SubPolygonType = any;
 type PolygonIdType = string | number;
+type UserDataOriginalPolygonType = {
+	type: 'Polygon';
+	coordinates: GeoLocation[];
+	area: {
+		m2: string;
+		ha: string;
+	};
+};
+type UserDataAnalysisSubPolygonType = {
+	id: string;
+	coordinates: GeoLocation[];
+	area: {
+		m2: string;
+		ha: string;
+	};
+	land_cover: LandCover;
+	soil_co_estimates: number | null;
+	veg_co_estimates: number | null;
+	mapSubPolygonLayerData: SubPolygonOnShowList;
+};
+type UserDataAnalysisType = {
+	type: 'FeatureCollection';
+	subPolygons: Array<UserDataAnalysisSubPolygonType[]>;
+};
+// state
+type UserDataType = {
+	created: string;
+	updated: string;
+	id: number;
+	originalPolygon: UserDataOriginalPolygonType;
+	analysis: UserDataAnalysisType;
+};
 
 type PolygonState = {
-	userData: TableDataType[];
-	subPolygonsToShow: SubPolygonType[];
+	userData: UserDataType[];
+	subPolygonsToShow: SubPolygonOnShowList[];
 	loading: boolean;
 };
 
 // actions
-
 type AddData = {
-	(data: TableDataType): {
-		type: string;
-		payload: TableDataType;
+	(data: UserDataType): {
+		type: 'ADD_TABLE_DATA';
+		payload: UserDataType;
 	};
 };
 
 type ShowSubPolygon = {
-	(subPolygon: SubPolygonType): {
-		type: string;
-		payload: SubPolygonType;
+	(subPolygon: SubPolygonOnShowList[]): {
+		type: 'SHOW_SUBPOLYGON';
+		payload: SubPolygonOnShowList[];
 	};
 };
 type DeletePolygon = {
 	(polygonId: PolygonIdType): {
-		type: string;
+		type: 'DEL_DATA_FROM_TABLE';
 		payload: PolygonIdType;
 	};
 };
-type PolygonActionType = {
-	type: string;
-	payload: TableDataType | SubPolygonType | PolygonIdType;
-};
-
-type PolygonReducer = {
-	(state: PolygonState, action: PolygonActionType): {
-		subPolygonsToShow: SubPolygonType[];
-		userData: TableDataType[];
-		loading: boolean;
-	};
-};
+type PolygonReducerActionArgument =
+	| {
+			type: 'ADD_TABLE_DATA';
+			payload: UserDataType;
+	  }
+	| {
+			type: 'SHOW_SUBPOLYGON';
+			payload: SubPolygonOnShowList[];
+	  }
+	| {
+			type: 'DEL_DATA_FROM_TABLE';
+			payload: PolygonIdType;
+	  };

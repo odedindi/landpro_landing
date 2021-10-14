@@ -1,0 +1,36 @@
+{
+	"header": {
+		"title": "LandPro",
+		"description": "Atténuer le changement climatique ensemble",
+		"keywords": "carbone, dioxyde de carbone, changement climatique, carbone organique du sol, soc, couverture végétale"
+	},
+	"outerTable": {
+		"id": "ID",
+		"date": "Date",
+		"area_ha": "Surface Ha",
+		"area_m2": "Surface \u33A1",
+		"plotName": "Nom du tracé",
+		"footer": {
+			"confirmDelete": "Supprimer le tracé ?"
+		}
+	},
+	"innerTable": {
+		"status": {
+			"updated": "Mise à jour"
+		},
+		"lastUpdate": "Dernière mise à jour",
+		"area": "Surface (%)",
+		"carbon": "Carbone",
+		"veg": "Végétation",
+		"soil": "Sol",
+		"options": "Options",
+		"updateMenuBtn": "Mettre à jour",
+		"reportMenuBtn": "Rapport"
+	},
+	"toolTipTable": {
+		"area_ha": "Surface Ha",
+		"carbon": "Carbone",
+		"veg": "Végétation",
+		"soil": "Sol"
+	}
+}

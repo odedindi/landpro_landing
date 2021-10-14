@@ -28,11 +28,15 @@
 		"@zendeskgarden/react-modals": "^8.40.0",
 		"@zendeskgarden/react-notifications": "^8.40.1",
 		"@zendeskgarden/react-theming": "^8.40.0",
+		"@zendeskgarden/react-tooltips": "^8.42.2",
 		"@zendeskgarden/react-typography": "^8.40.1",
+		"add": "^2.0.6",
 		"antd": "^4.16.13",
 		"gsap": "^3.7.1",
 		"leaflet": "1.7.1",
+		"leaflet-defaulticon-compatibility": "^0.1.1",
 		"leaflet-draw": "1.0.4",
+		"leaflet-easybutton": "^2.4.0",
 		"leaflet-geosearch": "3.3.2",
 		"next": "11.1.2",
 		"next-i18next": "^8.6.0",
@@ -42,6 +46,7 @@
 		"react-awesome-reveal": "^3.8.1",
 		"react-dom": "17.0.2",
 		"react-hot-toast": "^2.1.1",
+		"react-icons": "^4.3.1",
 		"react-leaflet": "3.2.0",
 		"react-leaflet-control": "2.1.2",
 		"react-leaflet-draw": "0.19.8",
@@ -50,7 +55,8 @@
 		"swr": "^1.0.1",
 		"three": "^0.132.2",
 		"use-screen-size": "^1.1.0",
-		"uuid": "^8.3.2"
+		"uuid": "^8.3.2",
+		"yarn": "^1.22.15"
 	},
 	"devDependencies": {
 		"@types/antd": "^1.0.0",

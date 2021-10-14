@@ -1,8 +1,8 @@
 import { generateAnalysedData, setFirstLatThenLngArray } from '.';
 import { calcArea } from '../calcArea';
 
-const preparePayload = (fetchedData: NewGeoJSONResponse) => {
-	console.log('fetchedData arriving to preparePayload: ', fetchedData);
+const preparePayload = (fetchedData: NewGeoJSONResponse): UserDataType => {
+	// console.log('fetchedData arriving to preparePayload: ', fetchedData);
 
 	let originalPolygonCoordinates = setFirstLatThenLngArray(
 		fetchedData.coordinates.features[0].geometry.coordinates[0],
@@ -28,7 +28,7 @@ const preparePayload = (fetchedData: NewGeoJSONResponse) => {
 		},
 		analysis: generateAnalysedData(fetchedData),
 	};
-	console.log('preparePayload: ', payload);
+	// console.log('preparePayload: ', payload);
 	return payload;
 };
 

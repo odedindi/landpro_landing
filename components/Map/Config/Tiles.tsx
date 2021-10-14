@@ -51,7 +51,7 @@ export const mapTiles: MapTile[] = [
 ];
 
 const Tiles = () => (
-	<>
+	<LayersControl position="topleft">
 		{mapTiles.map((tile) =>
 			tile.id === 1 ? (
 				<LayersControl.BaseLayer key={tile.id} checked name={`${tile.name}`}>
@@ -63,6 +63,6 @@ const Tiles = () => (
 				</LayersControl.BaseLayer>
 			),
 		)}
-	</>
+	</LayersControl>
 );
 export default Tiles;

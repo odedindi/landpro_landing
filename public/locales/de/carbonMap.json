@@ -1,0 +1,36 @@
+{
+	"header": {
+		"title": "LandPro",
+		"description": "Gemeinsam den Klimawandel eindämmen",
+		"keywords": "Kohlenstoff, Kohlendioxid, Klimawandel, organischer Kohlenstoff im Boden, Soc, Vegetationsbedeckung"
+	},
+	"outerTable": {
+		"id": "ID",
+		"date": "Datum",
+		"area_ha": "Bereich Ha",
+		"area_m2": "Bereich \u33A1",
+		"plotName": "Plotname",
+		"footer": {
+			"confirmDelete": "Plot löschen?"
+		}
+	},
+	"innerTable": {
+		"status": {
+			"updated": "Aktualisiert"
+		},
+		"lastUpdate": "Letzte Aktualisierung",
+		"area": "Bereich (%)",
+		"carbon": "Kohlenstoff",
+		"veg": "Vegetation",
+		"soil": "Erde",
+		"options": "Optionen",
+		"updateMenuBtn": "Aktualisieren",
+		"reportMenuBtn": "Bericht"
+	},
+	"toolTipTable": {
+		"area_ha": "Bereich Ha",
+		"carbon": "Kohlenstoff",
+		"veg": "Vegetation",
+		"soil": "Erde"
+	}
+}

@@ -36,7 +36,7 @@ const Watermark = () => {
 		if (!firstRender) return;
 
 		const addWatermark = (options: L.ControlOptions) => new watermark(options);
-		addWatermark({ position: 'bottomleft' }).addTo(map);
+		addWatermark({ position: 'bottomright' }).addTo(map);
 		setFirstRender(false);
 	}, [firstRender, map, watermark]);
 	return null;
