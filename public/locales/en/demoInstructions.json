@@ -2,7 +2,7 @@
 	"buttons": {
 		"next": "Next",
 		"back": "Back",
-		"toUser": "Find Me"
+		"submit": "Submit"
 	},
 	"steps": {
 		"1": {

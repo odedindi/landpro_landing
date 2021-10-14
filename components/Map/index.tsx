@@ -17,14 +17,14 @@ const SubPolygon = dynamic(() => import('./SubPolygon'));
 // ============================================================
 
 type MapProps = {
-	startGeoLocation: LatLngExpression;
+	startLocation: LatLngExpression;
 	zoom: Zoom;
 	setMapCenter: React.Dispatch<React.SetStateAction<L.Map>>;
 	subPolygonShowList: SubPolygonOnShowList[];
 };
 
 const Map = ({
-	startGeoLocation,
+	startLocation,
 	zoom,
 	setMapCenter,
 	subPolygonShowList,
@@ -32,7 +32,7 @@ const Map = ({
 	<S.MapWrapper>
 		<MapContainer
 			id="map"
-			center={startGeoLocation}
+			center={startLocation}
 			zoom={zoom}
 			crs={CRS.EPSG3857}
 			whenCreated={setMapCenter}

@@ -11,14 +11,11 @@ import * as PolygonStoreActions from 'context/polygon/actions';
 // ========================== utils ===========================
 import { generateGeoJSON, preparePayload } from 'utils/GIS/DataPreparation';
 import fetcher from 'utils/fetcher';
-import { flyTo } from 'utils/GIS';
 import notify from 'utils/notify';
 // ========================== icons ===========================
 import BorderColorRoundedIcon from '@material-ui/icons/BorderColorRounded';
 import BubbleChartRoundedIcon from '@material-ui/icons/BubbleChartRounded';
 import MapRoundedIcon from '@material-ui/icons/MapRounded';
-
-import GpsFixedRoundedIcon from '@material-ui/icons/GpsFixedRounded';
 // ======================== components ========================
 import { Button } from '@zendeskgarden/react-buttons';
 import { Col, Row } from '@zendeskgarden/react-grid';
@@ -28,18 +25,13 @@ import { Title } from '@zendeskgarden/react-notifications';
 import { Tooltip } from '@zendeskgarden/react-tooltips';
 // ============================================================
 
-type DemoInstructionsProps = {
-	mapCenter: L.Map;
-};
-
-const DemoInstructions = ({ mapCenter }: DemoInstructionsProps) => {
+const DemoInstructions = () => {
 	const { t } = useTranslation('demoInstructions');
 
 	const [currentStep, setStep] = React.useState(1);
 
 	const nextStep = () => setStep((prevState) => prevState + 1);
 	const prevStep = () => setStep((prevState) => prevState - 1);
-	const flyToUser = () => flyTo(mapCenter as L.Map, { to: 'user' });
 
 	const NextButton = () => (
 		<Button onClick={nextStep}>{t('buttons.next')}</Button>
@@ -47,14 +39,6 @@ const DemoInstructions = ({ mapCenter }: DemoInstructionsProps) => {
 	const BackButton = () => (
 		<Button onClick={prevStep}>{t('buttons.back')}</Button>
 	);
-	const ToUserButton = () => (
-		<Tooltip size="medium" content={t('buttons.toUser')}>
-			<IconButton onClick={flyToUser} aria-label="find user geolocation">
-				<GpsFixedRoundedIcon fontSize="inherit" />
-			</IconButton>
-		</Tooltip>
-	);
-
 	const SubmitButton = () => {
 		const {
 			userGeometry: { polygonDispatch },
@@ -128,9 +112,6 @@ const DemoInstructions = ({ mapCenter }: DemoInstructionsProps) => {
 					<Row justifyContent="around">
 						<BackButton />
 						<SubmitButton />
-					</Row>
-					<Row justifyContent="start">
-						<ToUserButton />
 					</Row>
 				</>
 			),

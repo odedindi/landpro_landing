@@ -22,7 +22,13 @@ const SubPolygon = ({
 }: SubPolygonProps) => {
 	const [opacityFromSoilOrVeg, setOpacityFromSoilOrVeg] =
 		React.useState('soil');
+	/* 
+	TODO: 
+		1. create a button that changes the opacityFromSoilOrVeg 
+		state for each subpolygon.
+		2. place it in to tooltipTable
 
+	*/
 	return (
 		<GeoJSON
 			key={id}

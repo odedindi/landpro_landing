@@ -31,16 +31,15 @@ const Map = dynamic(() => import('components/Map'), { ssr: false });
 
 const CarbonMap: NextPage = () => {
 	const didMount = useDidMount();
-	const { t } = useTranslation('carbonMap');
+	// const { t } = useTranslation('carbonMap');
 
 	// map settings
 	const [zoom] = React.useState<Zoom>(12);
 	const [startGeoLocation] = React.useState<LatLngExpression>([47.0227, 8.303]);
-	const { mapCenter, setMapCenter } = useMapCenter();
+	const { setMapCenter } = useMapCenter();
 
 	// map & user poylgons store
 	const {
-		mapGeometry: { mapMarkings },
 		userGeometry: { polygonState },
 	} = usePolygonStore();
 
@@ -57,65 +56,12 @@ const CarbonMap: NextPage = () => {
 			console.log('polygonState: ', polygonState);
 	}, [polygonState]);
 
-	const [canSubmit, setCanSubmit] = React.useState(false);
-	React.useEffect(() => {
-		mapMarkings.length > 0 ? setCanSubmit(true) : setCanSubmit(false);
-	}, [mapMarkings.length]);
-
-	const SubmitButton = () => {
-		const {
-			userGeometry: { polygonDispatch },
-			mapGeometry: { mapMarkings, setMapMarkings },
-		} = usePolygonStore();
-		const handleSubmit = () => {
-			const serverUrl = 'https://landpro.ch/api/polygons/new/';
-			notify('loading', 'Processing request...');
-			mapMarkings.map(async (marking) => {
-				const geoJSON = generateGeoJSON(marking);
-
-				const config: RequestInit = {
-					method: 'POST',
-					headers: new Headers({
-						'Content-Type': 'application/json',
-						Authorization: `Bearer ${localStorage.getItem('token')}`,
-					}),
-					body: JSON.stringify({ geoJSON }),
-				};
-
-				try {
-					const response = await fetcher<HttpResponse<NewGeoJSONResponse>>(
-						serverUrl,
-						config,
-					);
-
-					notify('success', 'Data analysed successfully');
-					polygonDispatch(
-						PolygonActions.addData(
-							preparePayload(
-								response.parsedBody as unknown as NewGeoJSONResponse,
-							),
-						),
-					);
-					setMapMarkings([]);
-				} catch (response) {
-					notify('error', `Error(${response}): Data was not sent!`);
-				}
-			});
-		};
-
-		return (
-			<Button disabled={!canSubmit ? true : false} onClick={handleSubmit}>
-				Submit
-			</Button>
-		);
-	};
-
 	if (!didMount) return null;
 	return (
 		<Well isFloating>
-			<DemoInstructions mapCenter={mapCenter} />
+			<DemoInstructions />
 			<Map
-				startGeoLocation={startGeoLocation}
+				startLocation={startGeoLocation}
 				zoom={zoom}
 				setMapCenter={setMapCenter}
 				subPolygonShowList={subPolygonShowList}
