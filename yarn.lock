@@ -963,10 +963,10 @@
     prop-types "^15.5.7"
     react-merge-refs "^1.1.0"
 
-"@zendeskgarden/react-buttons@^8.40.0":
-  version "8.40.0"
-  resolved "https://registry.yarnpkg.com/@zendeskgarden/react-buttons/-/react-buttons-8.40.0.tgz#9acee10a796520428bac8d2fd6e10bad492e1271"
-  integrity sha512-MbzgH2u9+a0g0BUIsM15pF1uvc0ARC5O4h/bqIlPiKtjXYk/3ZDnZQJT2Cved90vyZKp2B6pLepzp6143f56bw==
+"@zendeskgarden/react-buttons@^8.43.0":
+  version "8.44.2"
+  resolved "https://registry.yarnpkg.com/@zendeskgarden/react-buttons/-/react-buttons-8.44.2.tgz#bbf75d7901b80979135a54baae3c0a05dd1d2100"
+  integrity sha512-kNushTSK4EbCG1BIWUSgi9qYHclUaIxU3as7gzHh20A9mwe5ZTK6e1tl7bM9TrLrDB/ubr+p7ilMfj+/5SLlwA==
   dependencies:
     "@zendeskgarden/container-buttongroup" "^0.3.8"
     "@zendeskgarden/container-keyboardfocus" "^0.4.7"
