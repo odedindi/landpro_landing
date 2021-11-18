@@ -43,7 +43,7 @@ const TooltipTable = ({
 			width: 40,
 		},
 		{
-			title: t('toolTipTable.carbon'),
+			title: `${t('toolTipTable.carbon')} Ton / Ha`,
 			width: 100,
 			children: [
 				{

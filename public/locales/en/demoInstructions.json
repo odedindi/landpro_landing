@@ -7,15 +7,15 @@
 	"steps": {
 		"1": {
 			"label": "Carbon Map",
-			"content": "Please start by selectin an area."
+			"content": "Please start by drawing a polygon on your area of interest in the map."
 		},
 		"2": {
 			"label": "Area Selection",
-			"content": "Please mark a polygon on the map and when ready press on the submit button."
+			"content": "When ready please  press on the submit button."
 		},
 		"3": {
 			"label": "Data recieved",
-			"content": "vegetation contains: [x]CO/ton, soil contains: [y]CO/ton."
+			"content": "Vegetation contains: [x]CO/ton, soil contains: [y]CO/ton."
 		}
 	}
 }

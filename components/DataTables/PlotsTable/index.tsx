@@ -3,7 +3,7 @@ import * as React from 'react';
 // ======================= translations =======================
 import { useTranslation } from 'next-i18next';
 // ========================== hooks ===========================
-import { usePolygonStore } from 'hooks/usePolygonStore';
+import { usePolygonStore } from 'hooks';
 // =========================== data ===========================
 import * as PolygonActions from 'context/polygon/actions';
 import * as P from 'utils/GIS/DataPreparation';
@@ -11,14 +11,14 @@ import * as GIS from 'utils/GIS';
 import { datePrettier } from 'utils/datePrettier';
 // ======================== components ========================
 import Badge from './Badge';
-import { EditableCell, EditableRow } from './EditableCell';
+// import { EditableCell, EditableRow } from './EditableCell';
 import { Table } from 'antd';
 import tableColumns from './Columns';
 import TableFooter from './Footer';
 // =========================== types ==========================
-import { LatLngExpression } from 'leaflet';
-import { ColumnsType } from 'antd/lib/table';
-import { Key } from 'antd/lib/table/interface';
+import type { LatLngExpression } from 'leaflet';
+import type { ColumnsType } from 'antd/lib/table';
+import type { Key } from 'antd/lib/table/interface';
 // ============================================================
 
 type PlotsTableDataType = {

@@ -1,4 +1,5 @@
 //navigation
+
 type Page =
 	| {
 			title: 'home';
@@ -8,6 +9,11 @@ type Page =
 	| {
 			title: 'about';
 			path: '/about';
+			icon: JSX.Element;
+	  }
+	| {
+			title: 'demo';
+			path: '/carbonmap';
 			icon: JSX.Element;
 	  };
 

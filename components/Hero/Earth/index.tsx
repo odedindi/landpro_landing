@@ -1,14 +1,15 @@
+// ======================= React & Next =======================
 import * as React from 'react';
+// ========================= Three.js =========================
 import { Canvas, Vector3 } from '@react-three/fiber';
-
+// ======================== components ========================
 import Planet from './Planet';
+// ============================================================
 
 export const Earth = () => {
 	const [dpr, setDpr] = React.useState<number | undefined>();
 	React.useEffect(() => {
-		if (window) {
-			setDpr(window.devicePixelRatio);
-		}
+		if (window) setDpr(window.devicePixelRatio);
 	}, []);
 	const planetScale: Vector3 = [0.2, 0.2, 0.205];
 	return (

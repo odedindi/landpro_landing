@@ -1,8 +1,12 @@
-import * as THREE from 'three';
+// ======================= React & Next =======================
 import * as React from 'react';
+// ========================= Three.js =========================
+import * as THREE from 'three';
 import { useFrame } from '@react-three/fiber';
-import useMousePosition from 'hooks/useMousePosition';
 import { useTexture } from '@react-three/drei';
+// ========================== hooks ===========================
+import { useMousePosition } from 'hooks';
+// ============================================================
 
 export const Planet = (props: JSX.IntrinsicElements['mesh']) => {
 	const mousePosition = useMousePosition();

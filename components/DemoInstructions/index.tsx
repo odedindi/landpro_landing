@@ -5,7 +5,7 @@ import * as S from './style';
 // ======================= translations =======================
 import { useTranslation } from 'next-i18next';
 // ========================== hooks ===========================
-import { usePolygonStore } from 'hooks/usePolygonStore';
+import { usePolygonStore } from 'hooks';
 // ========================== actions =========================
 import * as PolygonStoreActions from 'context/polygon/actions';
 // ========================== utils ===========================
@@ -25,13 +25,18 @@ import { Title } from '@zendeskgarden/react-notifications';
 import { Tooltip } from '@zendeskgarden/react-tooltips';
 // ============================================================
 
-const DemoInstructions = () => {
+type DemoInstructionsProps = {
+	currentStep: number;
+	nextStep: () => void;
+	prevStep: () => void;
+};
+
+const DemoInstructions: React.FC<DemoInstructionsProps> = ({
+	currentStep,
+	nextStep,
+	prevStep,
+}) => {
 	const { t } = useTranslation('demoInstructions');
-
-	const [currentStep, setStep] = React.useState(1);
-
-	const nextStep = () => setStep((prevState) => prevState + 1);
-	const prevStep = () => setStep((prevState) => prevState - 1);
 
 	const NextButton = () => (
 		<Button onClick={nextStep}>{t('buttons.next')}</Button>
@@ -102,7 +107,6 @@ const DemoInstructions = () => {
 		{
 			id: '1',
 			icon: <MapRoundedIcon fontSize="inherit" />,
-			buttons: <NextButton />,
 		},
 		{
 			id: '2',
@@ -110,7 +114,6 @@ const DemoInstructions = () => {
 			buttons: (
 				<>
 					<Row justifyContent="around">
-						<BackButton />
 						<SubmitButton />
 					</Row>
 				</>
@@ -122,6 +125,7 @@ const DemoInstructions = () => {
 			buttons: <BackButton />,
 		},
 	];
+
 	return (
 		<Row justifyContent="center">
 			<Col sm={10} textAlign="center">

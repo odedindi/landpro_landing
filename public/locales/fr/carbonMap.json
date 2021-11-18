@@ -30,7 +30,11 @@
 	"toolTipTable": {
 		"area_ha": "Surface Ha",
 		"carbon": "Carbone",
+		"landCover": "Couverture terrestre",
 		"veg": "Végétation",
 		"soil": "Sol"
+	},
+	"buttons": {
+		"toUser": "Trouve-moi"
 	}
 }

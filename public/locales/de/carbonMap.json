@@ -30,7 +30,11 @@
 	"toolTipTable": {
 		"area_ha": "Bereich Ha",
 		"carbon": "Kohlenstoff",
+		"landCover": "Landbedeckung",
 		"veg": "Vegetation",
 		"soil": "Erde"
+	},
+	"buttons": {
+		"toUser": "Finde mich"
 	}
 }

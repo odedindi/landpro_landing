@@ -1,11 +1,40 @@
-import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
-export const MapWrapper = styled.div`
+const glowAndRotate = keyframes`
+0%{
+	transform: scale(0.95);
+	box-shadow: 0 0 0.75rem rgba(245, 92, 82, 0.8);
+}
+25% {
+	transform: scale(1);
+
+}
+50%{
+    transform: scale(1.05);
+  }
+  75% {
+	transform: scale(1);
+  }
+ 100% {
+    transform: scale(0.95);
+	box-shadow: 0 0 0.75rem rgba(245, 92, 82, 0.4);
+  }
+`;
+
+const glowAndRotateMixin = css`
+	animation: ${glowAndRotate} 1s linear infinite;
+`;
+
+export const MapWrapper = styled.div<{ demoStep: number }>`
 	height: 60vh;
 
 	#map {
 		height: 100%;
 		width: 100%;
+	}
+
+	.leaflet-draw-draw-polygon {
+		${({ demoStep }) => (demoStep === 1 ? glowAndRotateMixin : '')};
 	}
 
 	// search button

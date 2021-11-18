@@ -2,9 +2,11 @@
 import * as React from 'react';
 // ========================== styles ==========================
 import * as S from './style';
-// ============================================================
+// ======================== animation =========================
 import gsap from 'gsap';
+// ========================== utils ===========================
 import { v4 as uuid } from 'uuid';
+// ============================================================
 
 type StarsProps = {
 	heroRef: React.RefObject<HTMLDivElement>;

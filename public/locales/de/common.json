@@ -6,8 +6,7 @@
 	},
 	"links": {
 		"users": "Benutzer",
-		"ai": "KI Modell",
-		"news": "Nachrichten"
+		"ai": "KI Modell"
 	},
 	"copyRights": {
 		"Photo by": "*Foto von "

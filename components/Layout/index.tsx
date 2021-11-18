@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { useRouter } from 'next/router';
 // ========================== hooks ===========================
-import { useElementIsVisible } from 'hooks/useElementIsVisible';
+import { useElementIsVisible } from 'hooks';
 // ========================== styles ==========================
 import * as S from './style';
 // ======================== components ========================
@@ -12,7 +12,7 @@ import LandProHero from 'components/Hero';
 import Container from './Container';
 import ScrollUp from '../ScrollUp';
 import Footer from './Footer';
-import { routes } from 'utils/constants';
+import { Routes } from 'utils/constants';
 // ========================================================
 
 export const PageLayout: React.FC = ({ children }) => {
@@ -32,7 +32,7 @@ export const PageLayout: React.FC = ({ children }) => {
 				<div ref={elementToCheckIfVisible}>
 					<NavBar />
 				</div>
-				{pathname === routes.home && <LandProHero />}
+				{pathname === Routes.home && <LandProHero />}
 				<Container>
 					{children}
 					<ScrollUp disable={isVisible ? true : false} />

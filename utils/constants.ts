@@ -1,9 +1,10 @@
 export const isDev = process.env.NODE_ENV === 'development';
 
-export const routes: { home: '/'; about: '/about' } = {
-	home: '/',
-	about: '/about',
-};
+export enum Routes {
+	about = '/about',
+	home = '/',
+	map = '/carbonmap',
+}
 
 // polygon context
 export const ADD_TABLE_DATA = 'ADD_TABLE_DATA';

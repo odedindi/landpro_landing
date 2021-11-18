@@ -3,40 +3,35 @@ import * as React from 'react';
 import type { GetStaticProps, NextPage } from 'next';
 import dynamic from 'next/dynamic';
 // ========================== styles ==========================
-import * as S from 'styles/pages';
+// import * as S from 'styles/pages';
 // ======================= translations =======================
-import { useTranslation } from 'next-i18next';
+// import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 // ========================== hooks ===========================
-import { useMapCenter } from 'hooks/useMapCenter';
-import { usePolygonStore } from 'hooks/usePolygonStore';
-import { useDidMount } from 'hooks/useDidMount';
+import { useDemoInstructions, useDidMount, usePolygonStore } from 'hooks';
 // ========================== actions =========================
-import * as PolygonActions from 'context/polygon/actions';
+// import * as PolygonActions from 'context/polygon/actions';
 // ========================== utils ===========================
-import notify from 'utils/notify';
-import fetcher from 'utils/fetcher';
-// =========================== GIS ============================
-import { generateGeoJSON, preparePayload } from 'utils/GIS/DataPreparation';
+// import notify from 'utils/notify';
+// import fetcher from 'utils/fetcher';
+// // =========================== GIS ============================
+// import { generateGeoJSON, preparePayload } from 'utils/GIS/DataPreparation';
 // =========================== types ==========================
-import { LatLngExpression } from 'leaflet';
+import type { LatLngExpression } from 'leaflet';
 // ======================== components ========================
 import { Well } from '@zendeskgarden/react-notifications';
-
-import { Button } from '@zendeskgarden/react-buttons';
-import PlotsTable from 'components/DataTables/PlotsTable';
-import DemoInstructions from 'components/DemoInstructions';
+const PlotsTable = dynamic(() => import('components/DataTables/PlotsTable'));
 const Map = dynamic(() => import('components/Map'), { ssr: false });
 // ============================================================
 
 const CarbonMap: NextPage = () => {
 	const didMount = useDidMount();
+	const { instructions } = useDemoInstructions();
 	// const { t } = useTranslation('carbonMap');
 
 	// map settings
 	const [zoom] = React.useState<Zoom>(12);
 	const [startGeoLocation] = React.useState<LatLngExpression>([47.0227, 8.303]);
-	const { setMapCenter } = useMapCenter();
 
 	// map & user poylgons store
 	const {
@@ -48,8 +43,9 @@ const CarbonMap: NextPage = () => {
 		SubPolygonOnShowList[]
 	>([]);
 	React.useEffect(() => {
-		setSubPolygonShowList(polygonState.subPolygonsToShow);
-	}, [polygonState.subPolygonsToShow]);
+		const { subPolygonsToShow } = polygonState;
+		setSubPolygonShowList(subPolygonsToShow);
+	}, [polygonState]);
 
 	React.useEffect(() => {
 		if (process.env.NODE_ENV === 'development')
@@ -59,11 +55,10 @@ const CarbonMap: NextPage = () => {
 	if (!didMount) return null;
 	return (
 		<Well isFloating>
-			<DemoInstructions />
+			{instructions}
 			<Map
 				startLocation={startGeoLocation}
 				zoom={zoom}
-				setMapCenter={setMapCenter}
 				subPolygonShowList={subPolygonShowList}
 			/>
 			<PlotsTable />

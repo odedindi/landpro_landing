@@ -3,8 +3,7 @@ import * as React from 'react';
 // ======================= translations =======================
 import { useTranslation } from 'next-i18next';
 // ========================== hooks ===========================
-import { useMapCenter } from 'hooks/useMapCenter';
-import { usePolygonStore } from 'hooks/usePolygonStore';
+import { useMapCenter, usePolygonStore } from 'hooks';
 // ========================== actions =========================
 import * as PolygonActions from 'context/polygon/actions';
 // =========================== GIS ============================

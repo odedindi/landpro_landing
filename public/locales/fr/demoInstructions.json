@@ -1,0 +1,21 @@
+{
+	"buttons": {
+		"next": "Suivant",
+		"back": "Retour",
+		"submit": "Soumettre"
+	},
+	"steps": {
+		"1": {
+			"label": "Carte du carbone",
+			"content": "Veuillez commencer par dessiner un polygone sur votre zone d'intérêt sur la carte."
+		},
+		"2": {
+			"label": "Sélection de zone",
+			"content": "Lorsque vous êtes prêt, veuillez appuyer sur le bouton Soumettre."
+		},
+		"3": {
+			"label": "Données reçues",
+			"content": "La végétation contient : [x]CO/tonne, le sol contient : [y]CO/tonne."
+		}
+	}
+}

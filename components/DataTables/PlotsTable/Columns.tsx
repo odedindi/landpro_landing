@@ -86,7 +86,7 @@ const innerTable = (t: TFunction) => [
 		sorter: (a: any, b: any) => a.area - b.area,
 	},
 	{
-		title: t('innerTable.carbon'),
+		title: `${t('innerTable.carbon')} Ton / Ha`,
 		width: 100,
 		children: [
 			{
@@ -111,7 +111,7 @@ const innerTable = (t: TFunction) => [
 		key: 'operation',
 		width: 60,
 		responsive: ['md'] as Breakpoint[],
-		render: <MenuDropdown t={t} />,
+		// render: <MenuDropdown t={t} />,
 	},
 ];
 

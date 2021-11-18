@@ -1,0 +1,21 @@
+{
+	"buttons": {
+		"next": "Nächste",
+		"back": "Zurück",
+		"submit": "Absenden"
+	},
+	"steps": {
+		"1": {
+			"label": "Kohlenstoffkarte",
+			"content": "Bitte zeichnen Sie zunächst ein Polygon auf Ihrem Interessengebiet in der Karte."
+		},
+		"2": {
+			"label": "Bereichsauswahl",
+			"content": "Wenn Sie fertig sind, klicken Sie bitte auf den Senden-Button."
+		},
+		"3": {
+			"label": "Daten erhalten",
+			"content": "Vegetation enthält: [x]CO/Tonne, Boden enthält: [y]CO/Tonne."
+		}
+	}
+}

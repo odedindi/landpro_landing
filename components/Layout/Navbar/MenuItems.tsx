@@ -15,7 +15,6 @@ const ContactFrom = dynamic(() => import('components/ContactForm'));
 const MenuItems = () => {
 	const { t } = useTranslation('nav');
 	const { pathname, push } = useRouter();
-
 	return (
 		<>
 			<MenuItemsWrapper>
