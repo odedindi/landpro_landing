@@ -55,7 +55,7 @@
 		"react-social-icons": "^5.6.1",
 		"styled-components": "^5.3.1",
 		"swr": "^1.0.1",
-		"three": "^0.132.2",
+		"three": "^0.137.4",
 		"use-screen-size": "^1.1.0",
 		"uuid": "^8.3.2",
 		"yarn": "^1.22.15"
