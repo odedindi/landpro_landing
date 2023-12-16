@@ -1,7 +1,7 @@
 // ======================== react =========================
 import * as React from 'react';
 import { useRouter } from 'next/router';
-import dynamic from 'next/dynamic';
+// import dynamic from 'next/dynamic';
 // ======================== styles ========================
 import { NavBarButton, MenuItemsWrapper } from '../style';
 // ====================== translation =====================
@@ -9,7 +9,7 @@ import { useTranslation } from 'next-i18next';
 // ====================== components ======================
 import { pages } from './pagesAndMenuIcons';
 import SelectLanguage from 'components/SelectLanguage';
-const ContactFrom = dynamic(() => import('components/ContactForm'));
+// const ContactFrom = dynamic(() => import('components/ContactForm'));
 // ========================================================
 
 const MenuItems = () => {
@@ -18,7 +18,7 @@ const MenuItems = () => {
 	return (
 		<>
 			<MenuItemsWrapper>
-				<ContactFrom id="contact" />
+				{/* <ContactFrom id="contact" /> */}
 				{pages.map(
 					(item: Page) =>
 						pathname !== item.path && (

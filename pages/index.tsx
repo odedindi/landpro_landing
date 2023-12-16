@@ -14,7 +14,7 @@ import { useDidMount } from 'hooks/useDidMount';
 import scrollTo from 'utils/scrollTo';
 // ======================== components ========================
 const AyoraExample = dynamic(() => import('components/AyoraExample'));
-const ContactFrom = dynamic(() => import('components/ContactForm'));
+// const ContactFrom = dynamic(() => import('components/ContactForm'));
 const ContentBlock = dynamic(() => import('components/ContentBlock'));
 const LandProInfo = dynamic(() => import('components/LandproInfo'));
 const MiddleBlock = dynamic(() => import('components/ContentBlock/Middle'));
@@ -83,7 +83,7 @@ const Home: NextPage = () => {
 				icon="/assets/imgs/svg/farmland.png"
 				iconAlt="farmland">
 				<h6>{t('that is it.interested')}</h6>
-				<ContactFrom id="contact" />
+				{/* <ContactFrom id="contact" /> */}
 			</ContentBlock>
 		</S.PageWrapper>
 	);
