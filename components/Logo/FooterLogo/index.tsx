@@ -8,6 +8,8 @@ export const FooterLogo = ({ height, width }: NavBarOrFooterLogo) => (
 			height={height}
 			width={width}
 		/>
-		<p>&copy;{new Date().getFullYear()}</p>
+		<p>
+			<sup>&copy;</sup> 2021
+		</p>
 	</>
 );
