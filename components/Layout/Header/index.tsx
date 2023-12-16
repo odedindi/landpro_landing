@@ -5,10 +5,22 @@ import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 // ============================================================
 
+const getTranslationNameSpace = (pathname: string) => {
+	switch (pathname) {
+		case 'carbonmap':
+			return 'carbonMap';
+		case 'about':
+			return pathname;
+		default:
+			return 'common';
+	}
+};
+
 const Header = () => {
 	const { t } = useTranslation(
-		useRouter().pathname === '/' ? 'common' : 'about',
+		getTranslationNameSpace(useRouter().pathname.replace('/', '')),
 	);
+
 	return (
 		<Head>
 			<title>{t('header.title')}</title>
