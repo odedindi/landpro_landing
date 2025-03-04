@@ -996,10 +996,10 @@
     prop-types "^15.5.7"
     react-merge-refs "^1.1.0"
 
-"@zendeskgarden/react-grid@^8.40.0":
-  version "8.40.0"
-  resolved "https://registry.yarnpkg.com/@zendeskgarden/react-grid/-/react-grid-8.40.0.tgz#ef954e6e9d62f03acc07805b47beb8168a8836c8"
-  integrity sha512-mBAWxDeu7VCey0pCd861XJpAKKJaQO1xnP9zC31Zx0Q7FKYqcxO+wM8d3j2tNXe0SBz5LUPZomq9r6DYx3W0sg==
+"@zendeskgarden/react-grid@^8.43.0":
+  version "8.44.2"
+  resolved "https://registry.yarnpkg.com/@zendeskgarden/react-grid/-/react-grid-8.44.2.tgz#ae0fa9ccdf7e363dd77f125e21a16b3b864a2dd1"
+  integrity sha512-7sz7eKU6qaiimKRGFs9l/glmpHKNvsqS/D8DLXUu03+gMqmIfEDgcB04DzVtpeF93EDBLTH0lPQqYOoeIExj0g==
   dependencies:
     polished "^4.0.0"
     prop-types "^15.5.7"
