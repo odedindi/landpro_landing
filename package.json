@@ -21,7 +21,7 @@
 		"@react-three/fiber": "^7.0.7",
 		"@sendgrid/mail": "^7.4.6",
 		"@zendeskgarden/react-accordions": "^8.42.0",
-		"@zendeskgarden/react-buttons": "^8.40.0",
+		"@zendeskgarden/react-buttons": "^8.43.0",
 		"@zendeskgarden/react-chrome": "^8.42.0",
 		"@zendeskgarden/react-forms": "^8.42.0",
 		"@zendeskgarden/react-grid": "^8.40.0",
