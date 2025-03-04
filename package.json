@@ -25,7 +25,7 @@
 		"@zendeskgarden/react-chrome": "^8.42.0",
 		"@zendeskgarden/react-forms": "^8.42.0",
 		"@zendeskgarden/react-grid": "^8.40.0",
-		"@zendeskgarden/react-modals": "^8.40.0",
+		"@zendeskgarden/react-modals": "^8.43.0",
 		"@zendeskgarden/react-notifications": "^8.40.1",
 		"@zendeskgarden/react-theming": "^8.40.0",
 		"@zendeskgarden/react-tooltips": "^8.42.2",

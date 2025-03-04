@@ -1004,15 +1004,15 @@
     polished "^4.0.0"
     prop-types "^15.5.7"
 
-"@zendeskgarden/react-modals@^8.40.0":
-  version "8.40.0"
-  resolved "https://registry.yarnpkg.com/@zendeskgarden/react-modals/-/react-modals-8.40.0.tgz#32c72ba2429293b6cbeeef64562cab8f84398623"
-  integrity sha512-a2XSH/FOloTl/ieWQsqBFSja5fWsLqav3puPHQPLE0SlBJ+wYo8j/jUThXjMPyyGVy9hz8UAxFGiyjHGdSTzOQ==
+"@zendeskgarden/react-modals@^8.43.0":
+  version "8.44.2"
+  resolved "https://registry.yarnpkg.com/@zendeskgarden/react-modals/-/react-modals-8.44.2.tgz#327104fc8d486bf523c2dcb754c2c37d0ef24f20"
+  integrity sha512-KU4A4zincojVnhyJciT7Q3MjIC4m2B3u+SeVUtWzBjDkkGwL33j2gXV8AJoMFDROuo3MMnQ8sH4xeQUcHVv6uQ==
   dependencies:
     "@popperjs/core" "^2.4.4"
     "@zendeskgarden/container-focusvisible" "^0.4.6"
     "@zendeskgarden/container-modal" "^0.8.7"
-    "@zendeskgarden/container-utilities" "^0.5.5"
+    "@zendeskgarden/container-utilities" "^0.6.0"
     dom-helpers "^5.1.0"
     prop-types "^15.5.7"
     react-merge-refs "^1.1.0"
